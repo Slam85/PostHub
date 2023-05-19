@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import Comment from "../Comment/Comment";
+import Comment from "../Comment/AComment";
 function Like() {
 
     function countReducer(state, like) {
@@ -13,17 +13,7 @@ function Like() {
         else {
             throw new Error();
         }
-        function Comment() {
 
-
-            return (
-                <div>
-                    <button>✍</button>
-
-
-                </div>
-            );
-        }
     }
 
 
@@ -40,11 +30,8 @@ function Like() {
 
             <br />
             <span> {like}&nbsp;j'aime </span>
-            <div >
-                <input type="text" placeholder="Ajoutez votre commentaire ..." />
-                {Comment()}
-            </div>
 
+            <Comment />
         </div>
     );
 }
