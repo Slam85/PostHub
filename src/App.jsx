@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Connexion from './connexion/Connexion';
-import Creation from './creation/Creation';
+import Connexion from './connexion/connexion';
+import Creation from './creation/creation';
 
 function App() {
     const [currentForm, setCurrentForm] = useState("connexion");
