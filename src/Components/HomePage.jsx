@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HomePage from "./Components/HomePage";
-import ProfilePage from "./Components/ProfilePage";
+import HomePage from "../Components/HomePage";
+import ProfilePage from "../Components/ProfilePage";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
