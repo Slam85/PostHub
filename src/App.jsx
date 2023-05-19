@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import Connexion from './connexion/Connexion';
 import Creation from './creation/Creation';
@@ -8,12 +8,13 @@ function App() {
     const toggleForm = (formName) => {
         setCurrentForm(forName);
     }
-
+return(
     <div>
         {
             currentForm === 'connexion'? <Connexion onFormSwitch={toggleForm}/> : <Creation onFormSwitch={toggleForm}/>
         }
     </div>
+)
 }
 
 export default App;
