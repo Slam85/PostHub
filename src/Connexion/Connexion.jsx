@@ -1,23 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Connexion (){ 
-    return (
-        <div className="login-wrapper">
-            <h1>Connexion</h1>
-        <form>
-            <label>
-                <p>Username</p>
-                <input type="text"/>
-                </label>
-                <label>
-                    <p>Password</p>
-                    <input type="password"/>
-                        </label>
-                        <div>
-                            <button type="submit">Submit</button>
-                            </div>
-                            </form>
-                            </div>
+const Connexion = (props) =>{
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = () => {
+        e.preventDefault();
+        console.log(email);
+    }
+
+    return(
+        <div className="auth-form-container">
+        <form onSubmit={handleSubmit}>
+            <label for="email">email</label>
+            <input value={email} type="email" placeholder="your@email.com" id="email" name="email"/>
+            <label for="password">password</label>
+            <input value={password} type="password" placeholder="********" id="password" name="password"/>
+            <button type="submit">Connexion</button>
+        </form>
+        <button onClick={() => props.onFormSwitch("creation")}>Créer un compte</button>
+        </div>
     )
 }
 
