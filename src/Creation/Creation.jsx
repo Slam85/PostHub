@@ -1,29 +1,47 @@
 import {useState} from 'react'; 
+// import Connexion from '../connexion/Connexion';
+// import {useHistory} from 'react-router-dom";
 
-const Creation = (props) =>{
+function Creation(){
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
+    //const history=useHistory();
 
-    const handleSubmit = () => {
-        e.preventDefault();
-        console.log(email);
-    }
+    async function signUp(){
+
+        let item={name, password, email}
+        console.log(item);
+
+        let result=await fetch("https://social-network-api.osc-/fr1.scalingo.io/post-hub/creation",{
+        method: 'POST',
+        body:JSON.stringify(item),
+        headers: {
+            'Content-Type':'application/json',
+            'Accept':'application/json'
+        }
+    })
+
+    result = await result.json();
+    console.log('result', result);
+    localStorage.setItem('user-info', JSON.stringify(result));
+    //redirect to home page: history.push('/home');    }
 
     return (
         <div className='auth-form-container'>
-          <form onSubmit={handleSubmit}>
-            <label>Nom Complet</label>
-            <input valut={name} name='name' id='name' placeholder='Nom Complet' />
-            <label for="email">email</label>
-            <input value={email} type='email' placeholder='your@email.com' id='email' name='email'/>
+            <h2>Création de Compte</h2>
+            <label for ='name'>Nom Complet</label>
+            <input value ={name} type='text'id='name' placeholder='Nom Complet' onChange={(e)=>setName(e.target.value)} />
+            <label for='email'>email</label>
+            <input value ={email} type='text' placeholder='your@email.com' id='email'onChange={(e)=>setEmail(e.target.value)}/>
             <label for='password'>password</label>
-            <input value={password} type='password' placeholder='********' id='password' name='password'/>
-            <button type='submit'>Connexion</button>
-        </form>
-        <button onClick={() => props.onFormSwitch('connexion')}>Connexion</button>
+            <input value ={password} type='password' placeholder='********' id='password'onChange={(e)=>setPassword(e.target.value)}/>
+            <button type='submit'>Créer Mon Compte</button>
+        <button onClick={signUp}>Se Connecter</button>
         </div>
     )
+}
 }
 
 export default Creation;

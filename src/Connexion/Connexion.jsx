@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Creation from '../creation/Creation';
 
 const Connexion = (props) =>{
     const [email, setEmail] = useState('');
@@ -11,6 +12,7 @@ const Connexion = (props) =>{
 
     return(
         <div className='auth-form-container'>
+            <h2>Connexion</h2>
         <form onSubmit={handleSubmit}>
             <label for='email'>email</label>
             <input value={email} type='email' placeholder='your@email.com' id='email' name='email'/>
