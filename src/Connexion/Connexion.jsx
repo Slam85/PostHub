@@ -1,26 +1,43 @@
 import React, {useState} from 'react';
 import Creation from '../creation/Creation';
+import {useHistory} from 'react-router-dom";
 
-const Connexion = (props) =>{
+function Connexion() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const history = useHistory();
 
-    const handleSubmit = () => {
-        e.preventDefault();
-        console.log(email);
+    useEffect(()=> {
+        if (localStorage.getItem('user-info')) {
+            history.push('/add')
+        }
+    } , [])
+
+    async function login()
+        console.log(email, password);
+        let item={email, password};
+        let result=await fetch ('https://social-network-api.osc-/fr1.scalingo.io/post-hub/creation', {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json',
+                Accept:'application/json'
+            },
+            body:JSON.stringify(item);
+        });
+        result=await result.json();
+        localStorage.setItem('user-info', JSON.stringify(result))
+        history.push('/add')
     }
 
     return(
         <div className='auth-form-container'>
             <h2>Connexion</h2>
-        <form onSubmit={handleSubmit}>
             <label for='email'>email</label>
-            <input value={email} type='email' placeholder='your@email.com' id='email' name='email'/>
+            <input onChange={(e)=>setEmail(e.target.value)} value={email} type='text' placeholder='your@email.com' id='email' name='email'/>
             <label for='password'>password</label>
-            <input value={password} type='password' placeholder='********' id='password' name='password'/>
-            <button type='submit'>Connexion</button>
-        </form>
-        <button onClick={() => props.onFormSwitch('creation')}>Créer un compte</button>
+            <input onChange={(e)=>setPassword(e.target.value)} value={password} type='password' placeholder='********' id='password' name='password'/>
+            <button className='btnLogin' type='submit'>Connexion</button>
+        <button onClick={login}>Créer un compte</button>
         </div>
     )
 }
