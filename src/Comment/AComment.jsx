@@ -22,6 +22,8 @@ function Comment() {
 
     };
 
+
+
     function handleInput(e) {
         setComment(e.target.value);
         console.log("comment", comment);
@@ -33,8 +35,10 @@ function Comment() {
 
     return (
         <div>
+            <button type="submit" onClick={addComment} >✍</button>
             <input type="text" placeholder="faite votre commentaire" onChange={handleInput} />
-            <button type="submit" onClick={addComment}  >✍</button>
+
+
             <p>{renderMycomment()} </p>
 
         </div>

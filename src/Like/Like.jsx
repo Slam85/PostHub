@@ -23,13 +23,12 @@ function Like() {
 
     return (
         <div>
-
+            <span> {like}&nbsp;j'aime </span>
             <button onClick={() => updateLike("Like")}>❤️</button>
 
             <button onClick={() => updateLike("disLiked")}>💔</button>
 
-            <br />
-            <span> {like}&nbsp;j'aime </span>
+
 
             <Comment />
         </div>
