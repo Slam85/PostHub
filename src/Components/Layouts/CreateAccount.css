@@ -1,0 +1,61 @@
+.form1 {
+  width: 60vw;
+  border: 1px solid #333332;
+  font-family: "Krona One", sans-serif;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 1vh;
+}
+.form2 {
+  padding-left: 50vw;
+  padding-right: 3vw;
+  margin-bottom: 10vh;
+  border: 1px solid #333332;
+  font-family: "Krona One", sans-serif;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 90vw;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: #c7ecf6;
+  flex-direction: column;
+  margin-top: 5vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-bottom: 10vh;
+}
+
+.bloc1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1vh;
+}
+.bloc2 {
+  display: flex;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+label {
+  color: black;
+}
+.bodyReg {
+  display: flex;
+  justify-content: space-between;
+}
+.containerTitle {
+  color: #333332;
+  text-align: center;
+}
+
+.buttonInscription {
+  margin-top: 3vh;
+  margin-left: 28vw;
+}
