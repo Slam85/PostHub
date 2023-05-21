@@ -3,6 +3,7 @@ import './App.css';
 import Connexion from './connexion/Connexion';
 import Creation from './creation/Creation';
 
+
 function App() {
     // const [currentForm, setCurrentForm] = useState('connexion');
     // const toggleForm = (formName) => {
@@ -10,9 +11,7 @@ function App() {
     // }
 return(
     <div>
-        {/* {
-            currentForm === 'connexion'? <Connexion onFormSwitch={toggleForm}/> : <Creation onFormSwitch={toggleForm}/>
-        } */}
+        
     </div>
 )
 }
