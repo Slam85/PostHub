@@ -1,50 +1,50 @@
-import {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 function Creation(){
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [name, setName] = useState('');
-    const navigate=useNavigate();
+    const [info, setInfo] = useState({});
+    const [arrayInfo, setArrayInfo] = useState({});
 
-     useEffect(()=> {
-        if (localStorage.getItem('user-info')) {
-            navigate.push('/add')
-        }
-    } , [])
+    const getInfo = (e) => {
+        e.preventDefault();
+        setInfo(new FormInfo());
+        setArrayInfo([...arrayInfo, info]);
+    };
 
-    async function signUp(){
+     useEffect(() =>{
+        useEffet(() => {
+            console.log('Infos :', arrayInfo);
+        }, [arrayInfo]);
+     })
+
+     async function signUp(){
 
         let item={name, password, email}
         console.log(item);
 
-        let result=await fetch('https://social-network-api.osc-/fr1.scalingo.io/post-hub/creation',{
+        const result =await fetch('https://social-network-api.osc-/fr1.scalingo.io/post-hub/creation', {
         method: 'POST',
-        body:JSON.stringify(item),
         headers: {
             'Content-Type':'application/json',
             'Accept':'application/json'
-        }
-    })
+        },
+        body:JSON.stringify(item)})
 
     result = await result.json();
     console.log('result', result);
     localStorage.setItem('user-info', JSON.stringify(result));
-    navigation.push('/home');
     }
 
     return (
-        <div className='auth-form-container'>
+        <div className='containerCreation'>
             <h2>Création de Compte</h2>
-            <label for ='name'>Nom Complet</label>
-            <input value ={name} type='text'id='name' placeholder='Nom Complet' onChange={(e)=>setName(e.target.value)} />
-            <label for='email'>email</label>
-            <input value ={email} type='text' placeholder='your@email.com' id='email'onChange={(e)=>setEmail(e.target.value)}/>
-            <label for='password'>password</label>
-            <input value ={password} type='password' placeholder='********' id='password'onChange={(e)=>setPassword(e.target.value)}/>
+            <form className='formCreation' onSubmit={getInfo}>
+            <input type='text'id='name' placeholder='Nom Complet' />
+            <input type='email' placeholder='your@email.com' id='email'/>
+            <input type='password' placeholder='********' id='password'/>
             <button className='btnSignup' type='submit'>Créer Mon Compte</button>
-        <button onClick={signUp}>Se Connecter</button>
+            </form>
+        <button type='submit'>Se Connecter</button>
         </div>
     )
 }
