@@ -1,0 +1,31 @@
+/* NAVBAR */
+.navBar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+  align-items: center;
+}
+.navBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.noConnect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.connect {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn:hover {
+  background-color: #333332;
+  color: white;
+}

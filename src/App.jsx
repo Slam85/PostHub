@@ -1,20 +1,8 @@
-import { useState } from 'react';
-import './App.css';
-import Connexion from './connexion/Connexion';
-import Creation from './creation/Creation';
+import { router } from "./Routes";
+import { RouterProvider } from "react-router-dom";
 
 function App() {
-    const [currentForm, setCurrentForm] = useState('connexion');
-    const toggleForm = (formName) => {
-        setCurrentForm(forName);
-    }
-return(
-    <div>
-        {
-            currentForm === 'connexion'? <Connexion onFormSwitch={toggleForm}/> : <Creation onFormSwitch={toggleForm}/>
-        }
-    </div>
-)
+  return <RouterProvider router={router} />;
 }
 
-export default App;
+export default App;;

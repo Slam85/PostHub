@@ -1,0 +1,59 @@
+.logo {
+  width: 7vw;
+  margin-left: 2vh;
+}
+
+input {
+  border-color: #333332;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  color: #333332;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+h5 {
+  color: white;
+  margin: 0.5rem;
+  text-align: center;
+}
+.posterButton {
+  margin-top: 5vw;
+  margin-left: 5vw;
+  border-radius: 10px;
+}
+
+.author {
+  text-align: left;
+  font-size: 0.7rem;
+  margin-left: 2%;
+}
+
+.homeContainer {
+  width: 75vw;
+  background-color: white;
+  border: 3px solid #333332;
+  margin-bottom: 4%;
+  border-radius: 15px;
+  font-size: 10px;
+}
+
+.buttonLike {
+  border: none;
+  background-color: white;
+  width: 3vw;
+  margin-left: 2%;
+  margin-bottom: 1%;
+}
+
+.contenuBloc {
+  margin-left: 2%;
+}
