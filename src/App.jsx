@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import './App.css';
+import { Link } from 'react-router-dom';
 import Connexion from './connexion/Connexion';
 import Creation from './creation/Creation';
 
-
 function App() {
-    // const [currentForm, setCurrentForm] = useState('connexion');
-    // const toggleForm = (formName) => {
-    //     setCurrentForm(forName);
-    // }
-return(
+
+  return (
+    <> 
     <div>
-        
+    <Connexion/>
+    <Creation/>
     </div>
-)
+    </>
+  )
 }
 
-export default App;
+export default App

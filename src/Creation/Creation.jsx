@@ -1,5 +1,4 @@
-import {useState} from 'react'; 
-import Connexion from '../connexion/Connexion';
+import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 function Creation(){
@@ -8,6 +7,12 @@ function Creation(){
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const navigate=useNavigate();
+
+     useEffect(()=> {
+        if (localStorage.getItem('user-info')) {
+            navigate.push('/add')
+        }
+    } , [])
 
     async function signUp(){
 
