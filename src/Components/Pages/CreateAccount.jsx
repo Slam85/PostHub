@@ -45,7 +45,7 @@ function CreateAccount() {
   return (
     <div>
       <Search />
-      <div className="bodyReg">
+      <div className="bodyAccount">
         <div className="container">
           <h1 className="containerTitle">Create Account</h1>
           <form action="" className="mx-auto" method="post">

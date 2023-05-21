@@ -104,11 +104,12 @@ function HomeConnect() {
     return allPosts.map((item, index) => {
       return (
         <div key={index}>
-          <div className="homeSpace">
+          <div className="homeContainer">
             <p className="contenuBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
-              {item.firstname} {item.lastname}
+              {" "}
+              Author : {item.firstname} {item.lastname}
             </p>
             <button className="buttonLike" onClick={() => like(item._id)}>
               ❤️
@@ -160,10 +161,15 @@ function HomeConnect() {
                 className="form1"
               />
             </div>
+
+            <button
+              type="submit"
+              onClick={handleSubmit}
+              className="posterButton"
+            >
+              Poster
+            </button>
           </div>
-          <button type="submit" onClick={handleSubmit} className="posterButton">
-            Poster
-          </button>
         </form>
 
         <div className="form2">

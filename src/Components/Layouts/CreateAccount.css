@@ -1,5 +1,5 @@
 .form1 {
-  width: 60vw;
+  width: 50vw;
   border: 1px solid #333332;
   font-family: "Krona One", sans-serif;
   background-color: white;
@@ -7,38 +7,35 @@
   margin-top: 1vh;
 }
 .form2 {
-  padding-left: 50vw;
-  padding-right: 3vw;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
   margin-bottom: 10vh;
   border: 1px solid #333332;
   font-family: "Krona One", sans-serif;
   background-color: white;
   border-radius: 15px;
+  width: 60rem;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .container {
-  display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  width: 90vw;
-  box-sizing: border-box;
+  margin: auto;
+  width: cover;
   border-radius: 12px;
   background-color: #c7ecf6;
-  flex-direction: column;
   margin-top: 5vh;
   padding-left: 5vw;
   padding-right: 5vw;
-  margin-bottom: 10vh;
 }
 
-.bloc1 {
-  display: flex;
-  flex-direction: column;
-  margin-top: 1vh;
-}
 .bloc2 {
   display: flex;
+  margin-left: 100px;
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
@@ -46,7 +43,7 @@
 label {
   color: black;
 }
-.bodyReg {
+.bodyAccount {
   display: flex;
   justify-content: space-between;
 }

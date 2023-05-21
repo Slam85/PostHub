@@ -48,7 +48,7 @@ function Connection() {
   return (
     <div className="connection">
       <Search />
-      <div className="middle">
+      <div className="containerMillieu">
         <div className="container">
           <h1 className="containerTitle">Sign in</h1>
           <div className="bloc1">
