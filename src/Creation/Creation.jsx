@@ -1,13 +1,13 @@
 import {useState} from 'react'; 
 import Connexion from '../connexion/Connexion';
-import {useNavigation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function Creation(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
-    const navigation=useNavigation();
+    const navigate=useNavigate();
 
     async function signUp(){
 

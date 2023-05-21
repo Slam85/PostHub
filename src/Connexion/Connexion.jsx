@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import Creation from '../creation/Creation';
-import {useNavigation} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 async function Connexion() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const history = useNavigation();
+    const navigate = useNavigate();
 
     useEffect(()=> {
         if (localStorage.getItem('user-info')) {
-            navigation.push('/add')
+            navigate.push('/add')
         }
     } , [])
 
@@ -26,7 +26,7 @@ async function Connexion() {
         }
         result=await result.json();
         localStorage.setItem('user-info', JSON.stringify(result))
-        // navigation.push('/add')
+        navigate.push('/add')
 
     return(
         <div className='auth-form-container'>
