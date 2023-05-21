@@ -1,13 +1,13 @@
 import {useState} from 'react'; 
 import Connexion from '../connexion/Connexion';
-// import {useHistory} from 'react-router-dom';
+import {useNavigation} from 'react-router-dom';
 
 function Creation(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
-    // const history=useHistory();
+    const navigation=useNavigation();
 
     async function signUp(){
 
@@ -26,7 +26,7 @@ function Creation(){
     result = await result.json();
     console.log('result', result);
     localStorage.setItem('user-info', JSON.stringify(result));
-    // history.push('/home');
+    navigation.push('/home');
     }
 
     return (
