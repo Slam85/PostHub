@@ -1,33 +1,32 @@
 import React, {useState} from 'react';
 import Creation from '../creation/Creation';
-import {useHistory} from 'react-router-dom";
+// import {useHistory} from 'react-router-dom';
 
-function Connexion() {
+async function Connexion() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const history = useHistory();
+    // const history = useHistory();
 
-    useEffect(()=> {
-        if (localStorage.getItem('user-info')) {
-            history.push('/add')
-        }
-    } , [])
+    // useState(()=> {
+    //     if (localStorage.getItem('user-info')) {
+    //         history.push('/add')
+    //     }
+    // } , [])
 
-    async function login()
+    async function login(){
         console.log(email, password);
         let item={email, password};
-        let result=await fetch ('https://social-network-api.osc-/fr1.scalingo.io/post-hub/creation', {
+        let result=await fetch ('https://social-network-api.osc-/fr1.scalingo.io/post-hub/connexion', {
             method: 'POST',
             headers: {
                 'Content-Type':'application/json',
                 Accept:'application/json'
             },
-            body:JSON.stringify(item);
-        });
+            body:JSON.stringify(item)})
+        }
         result=await result.json();
         localStorage.setItem('user-info', JSON.stringify(result))
-        history.push('/add')
-    }
+        // history.push('/add')
 
     return(
         <div className='auth-form-container'>
