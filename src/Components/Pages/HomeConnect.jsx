@@ -141,7 +141,6 @@ function HomeConnect() {
     <div className="App">
       <Search />
       <div className="container">
-        <h1 className="pageTitle">PostHub Feed</h1>
         <form onSubmit={handleSubmit}>
           <div className="bloc2">
             <div className="posts">
@@ -152,24 +151,23 @@ function HomeConnect() {
                 placeholder="Post Title"
                 className="form1"
               />
-              <textarea
-                type="textarea"
+              <input
+                type="text"
                 rows="5"
                 value={inputValue}
                 onChange={handleInputChange}
                 placeholder="Post Text"
-                className="form1"
+                className="createPost"
               />
             </div>
-
-            <button
+          </div>
+          <button
               type="submit"
               onClick={handleSubmit}
               className="posterButton"
             >
               Poster
             </button>
-          </div>
         </form>
 
         <div className="form2">

@@ -24,25 +24,25 @@ function NavBar() {
       <div className="navBtn">
         {token ? (
           <>
-            <button className="btn">
-              <Link to="/home" className="btn">
+            {/* <button className="btnHome"> */}
+              <Link to="/home" className="btnHome">
                 Home
               </Link>
-            </button>
+            {/* </button> */}
             <div className="connect">
-              <button className="btn">
-                <Link to="/profile">Profile</Link>
-              </button>
+              {/* <button className="btn"> */}
+                <Link to="/profile" className="btnProfile">Profile</Link>
+              {/* </button> */}
               <button onClick={handleSubmit}>Sign Out</button>
             </div>
           </>
         ) : (
           <>
-            <button className="btn">
+            {/* <button className="btn"> */}
               <Link to="/" className="btn">
                 Home
               </Link>
-            </button>
+            {/* </button> */}
             <div className="noConnect">
               <button className="btn">
                 <Link to="/register" className="btn">

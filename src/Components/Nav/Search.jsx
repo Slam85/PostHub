@@ -21,19 +21,17 @@ function Search() {
 
   return (
     <div className="search">
-      <img src={logo} alt="logo" className="logo" />
+      {/* <img src={'./logo.png'} alt="logo" className="logo" /> */}
+      <img src={'./posthub.png'} alt="logo" className="logoComplet" />
       <div>
-        <h1 className="titre">PostHub</h1>
       </div>
 
       {!localStorage.getItem("token") ? (
         <div className="textNotConnect">
-          <h5>Not Connected</h5>
           <NavBar />
         </div>
       ) : (
         <div className="textConnect">
-          <h5>Connected</h5>
           <NavBar />
         </div>
       )}
