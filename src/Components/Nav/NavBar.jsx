@@ -15,7 +15,7 @@ function NavBar() {
       localStorage.removeItem("password");
       navigate("/");
     } else {
-      swal("Stay connected wiht us");
+      swal("Good! You stay wiht us");
     }
   };
 

@@ -103,6 +103,24 @@ function HomeConnect() {
     setInputTitle(e.target.value);
   }
 
+  async function getInfoProfil() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "bearer " + localStorage.getItem("token"),
+      },
+    };
+    const response = await fetch(
+      `https://social-network-api.osc-fr1.scalingo.io/post-hub/user`,
+      options
+    );
+    const data = await response.json();
+  }
+  useEffect(() => {
+    getInfoProfil();
+  }, []);
+
   async function postPosts(e) {
     e.preventDefault();
 

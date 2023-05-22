@@ -39,9 +39,10 @@ function Connection() {
     localStorage.setItem("token", data.token);
 
     if (data.success) {
+      swal("Welcome!", "You as connected!", "success");
       navigate("/home");
     } else {
-      swal("Login Failed");
+      swal("Sign in failed!", "Confirm e-mail and/or password", "error");
     }
   }
 
