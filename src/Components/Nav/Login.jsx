@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import logo from "../Images/logo.jpg";
-import NavBar from "../Nav/NavBar";
-import "../Layouts/Search.css";
+import NavBar from "./NavBar";
 
-function Search() {
+function Login() {
   async function getInfoProfil() {
     const options = {
       method: "GET",
@@ -20,7 +19,7 @@ function Search() {
   }
 
   return (
-    <div className="search">
+    <div className="login">
       <img src={logo} alt="logo" className="logo" />
       <div>
         <h1 className="titre">PostHub</h1>
@@ -28,7 +27,6 @@ function Search() {
 
       {!localStorage.getItem("token") ? (
         <div className="textNotConnect">
-          <h5>Not Connected</h5>
           <NavBar />
         </div>
       ) : (
@@ -41,4 +39,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default Login;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
 
 function Home() {
   const [allPosts, setAllPosts] = useState([]);
@@ -78,7 +78,7 @@ function Home() {
 
   return (
     <div className="App">
-      <Search />
+      <Login />
       <div className="container">
         <h1 className="pageTitle">PostHub Feed</h1>
 

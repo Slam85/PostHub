@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
 
 function HomeConnect() {
   const [inputValue, setInputValue] = useState("");
@@ -44,14 +44,14 @@ function HomeConnect() {
     getAllPost();
   }, []);
 
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
+  function handleInputChange(e) {
+    setInputValue(e.target.value);
   }
-  function handleInputChange2(event) {
-    setInputTitle(event.target.value);
+  function handleInputChange2(e) {
+    setInputTitle(e.target.value);
   }
-  function handleSubmit(event) {
-    event.preventDefault();
+  function handleSubmit(e) {
+    e.preventDefault();
     postPosts();
     setInputValue("");
     setInputTitle("");
@@ -139,7 +139,7 @@ function HomeConnect() {
 
   return (
     <div className="App">
-      <Search />
+      <Login />
       <div className="container">
         <h1 className="pageTitle">PostHub Feed</h1>
         <form onSubmit={handleSubmit}>
@@ -164,8 +164,8 @@ function HomeConnect() {
 
             <button
               type="submit"
-              onClick={handleSubmit}
               className="posterButton"
+              onClick={handleSubmit}
             >
               Poster
             </button>

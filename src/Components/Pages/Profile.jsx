@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Nav/Footer";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
 import "../Layouts/Profile.css";
 
 function Profile() {
@@ -79,7 +79,7 @@ function Profile() {
 
   return (
     <div>
-      <Search />
+      <Login />
       <div className="home">
         {isEditing === false ? (
           <div className="container">

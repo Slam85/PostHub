@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../Nav/Footer";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
 import { useNavigate } from "react-router-dom";
 
 function Connection() {
@@ -47,7 +47,7 @@ function Connection() {
 
   return (
     <div className="connection">
-      <Search />
+      <Login />
       <div className="containerMillieu">
         <div className="container">
           <h1 className="containerTitle">Sign in</h1>
@@ -70,7 +70,9 @@ function Connection() {
             ></input>
           </div>
           <div className="buttonValider">
-            <button onClick={handleSubmit}>Log in</button>
+            <button className="btn" onClick={handleSubmit}>
+              Log in
+            </button>
           </div>
         </div>
       </div>

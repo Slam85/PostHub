@@ -1,5 +1,4 @@
 import React from "react";
-import Search from "../Nav/Search";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
 import "../Layouts/Error.css";
@@ -7,7 +6,7 @@ import "../Layouts/Error.css";
 function Error() {
   return (
     <div>
-      <Search />
+      <Login />
       <div className="home">
         <section class="page_404">
           <div class="container">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Nav/Footer";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
 import "../Layouts/CreateAccount.css";
 
 function CreateAccount() {
@@ -44,7 +44,7 @@ function CreateAccount() {
 
   return (
     <div>
-      <Search />
+      <Login />
       <div className="bodyAccount">
         <div className="container">
           <h1 className="containerTitle">Create Account</h1>
@@ -89,7 +89,7 @@ function CreateAccount() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <button onClick={handleSubmit} className="buttonInscription">
+            <button className="buttonInscription" onClick={handleSubmit}>
               Create Account
             </button>
           </form>

@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.search {
+.login {
   display: flex;
   background-color: #ccc;
   justify-content: space-between;
@@ -39,11 +39,12 @@ button {
   border-radius: 11px;
 }
 
-button:hover {
-  background-color: #333332;
-  color: white;
-}
-
 h3 {
   color: #333332;
+}
+
+h5 {
+  color: green;
+  margin: 0.5rem;
+  text-align: center;
 }

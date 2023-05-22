@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Layouts/NavBar.css";
+import "../Layouts/Login.css";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -31,9 +32,13 @@ function NavBar() {
             </button>
             <div className="connect">
               <button className="btn">
-                <Link to="/profile">Profile</Link>
+                <Link to="/profile" className="btn">
+                  Profile
+                </Link>
               </button>
-              <button onClick={handleSubmit}>Sign Out</button>
+              <button className="btn" onClick={handleSubmit}>
+                Sign Out
+              </button>
             </div>
           </>
         ) : (
