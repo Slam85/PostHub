@@ -105,16 +105,18 @@ function HomeConnect() {
       return (
         <div key={index}>
           <div className="homeContainer">
-            <p className="contenuBloc">{item.title}</p>
+            <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
               {" "}
               Author : {item.firstname} {item.lastname}
             </p>
+            <div className="likes">
             <button className="buttonLike" onClick={() => like(item._id)}>
               ❤️
             </button>{" "}
             <span>{item.likes.length}</span>
+            </div>
           </div>
         </div>
       );
@@ -169,7 +171,6 @@ function HomeConnect() {
               Poster
             </button>
         </form>
-
         <div className="form2">
           <div action="" method="get" className="bloc1">
             {renderMyPosts()}

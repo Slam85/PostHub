@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Footer from "../Nav/Footer";
 import Search from "../Nav/Search";
+import "../Layouts/navStyle.css";
+import "../Layouts/CreateAccount.css";
+import "../Layouts/NavBar.css";
+import "../Layouts/Search.css";
 import { useNavigate } from "react-router-dom";
 
 function Connection() {
