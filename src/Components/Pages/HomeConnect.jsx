@@ -101,7 +101,7 @@ function HomeConnect() {
   }
 
   const renderMyPosts = () => {
-    return allPosts.map((item, index) => {
+    return allPosts.slice(0, 4).map((item, index) => {
       return (
         <div key={index}>
           <div className="homeContainer">
@@ -162,12 +162,12 @@ function HomeConnect() {
             </div>
           </div>
           <button
-              type="submit"
-              onClick={handleSubmit}
-              className="posterButton"
-            >
-              Poster
-            </button>
+            type="submit"
+            onClick={handleSubmit}
+            className="posterButton"
+          >
+            Poster
+          </button>
         </form>
 
         <div className="form2">
