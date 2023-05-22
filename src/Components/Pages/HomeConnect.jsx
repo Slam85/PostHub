@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import swal from "sweetalert";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
 import Login from "../Nav/Login";
@@ -44,39 +44,68 @@ function HomeConnect() {
     getAllPost();
   }, []);
 
-  function handleInputChange(e) {
-    setInputValue(e.target.value);
-  }
-  function handleInputChange2(e) {
-    setInputTitle(e.target.value);
-  }
-  function handleSubmit(e) {
-    e.preventDefault();
-    postPosts();
-    setInputValue("");
-    setInputTitle("");
-  }
-
-  async function getInfoProfil() {
+  async function addComment(postId, commentText) {
     const options = {
-      method: "GET",
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: "bearer " + localStorage.getItem("token"),
       },
+      body: JSON.stringify({
+        postId: postId,
+        content: commentText,
+      }),
     };
+
     const response = await fetch(
-      `https://social-network-api.osc-fr1.scalingo.io/post-hub/user`,
+      `https://social-network-api.osc-fr1.scalingo.io/post-hub/post/comment`,
       options
     );
-
     const data = await response.json();
+
+    if (data.success) {
+      getAllPost();
+    } else {
+      swal(data.message);
+    }
   }
+
+  async function getAllPost() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const response = await fetch(
+      "https://social-network-api.osc-fr1.scalingo.io/post-hub/posts?page=0&limit=10",
+      options
+    );
+    const data = await response.json();
+
+    if (data.success) {
+      setAllPosts(data.posts);
+    } else {
+      swal(data.message);
+    }
+  }
+
   useEffect(() => {
-    getInfoProfil();
+    getAllPost();
   }, []);
 
-  async function postPosts() {
+  function handleInputChange(e) {
+    setInputValue(e.target.value);
+  }
+
+  function handleInputChange2(e) {
+    setInputTitle(e.target.value);
+  }
+
+  async function postPosts(e) {
+    e.preventDefault();
+
     const options = {
       method: "POST",
       headers: {
@@ -88,11 +117,13 @@ function HomeConnect() {
         content: inputValue,
       }),
     };
+
     const response = await fetch(
       "https://social-network-api.osc-fr1.scalingo.io/post-hub/post",
       options
     );
     const data = await response.json();
+
     if (data.success) {
       getAllPost();
     } else {
@@ -101,48 +132,50 @@ function HomeConnect() {
   }
 
   const renderMyPosts = () => {
-    return allPosts.map((item, index) => {
+    return allPosts.map((item) => {
       return (
-        <div key={index}>
+        <div key={item._id}>
           <div className="homeContainer">
             <p className="contenuBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
-              {" "}
-              Author : {item.firstname} {item.lastname}
+              Author: {item.firstname} {item.lastname}
             </p>
             <button className="buttonLike" onClick={() => like(item._id)}>
               ❤️
             </button>{" "}
             <span>{item.likes.length}</span>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const commentText = e.target.comment.value;
+                addComment(item._id, commentText);
+                e.target.reset();
+              }}
+            >
+              <input
+                type="text"
+                name="comment"
+                placeholder="Ajouter un commentaire"
+              />
+              <button type="submit">Commenter</button>
+            </form>
+            {item.comments &&
+              item.comments.map((comment) => (
+                <p key={comment._id}>{comment.content}</p>
+              ))}
           </div>
         </div>
       );
     });
   };
 
-  async function getAllPost() {
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    let response = await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/post-hub/posts?page=0&limit=10",
-      options
-    );
-    let data = await response.json();
-
-    setAllPosts(data.posts);
-  }
-
   return (
     <div className="App">
       <Login />
       <div className="container">
         <h1 className="pageTitle">PostHub Feed</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={postPosts}>
           <div className="bloc2">
             <div className="posts">
               <input
@@ -161,27 +194,18 @@ function HomeConnect() {
                 className="form1"
               />
             </div>
-
-            <button
-              type="submit"
-              className="posterButton"
-              onClick={handleSubmit}
-            >
+            <button type="submit" className="posterButton">
               Poster
             </button>
           </div>
         </form>
-
         <div className="form2">
           <div action="" method="get" className="bloc1">
             {renderMyPosts()}
           </div>
         </div>
       </div>
-
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }
