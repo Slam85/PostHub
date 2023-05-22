@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Task from "./Task";
 import React, { useRef } from "react";
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
 
 function Comment() {
     const [comment, setComment] = useState("");
@@ -35,11 +38,12 @@ function Comment() {
         <div>
 
             <input type="text" placeholder="faite votre commentaire" onChange={handleInput} />
-            <button type="submit" onClick={addComment} >✍</button>
-
+            <a className="my-anchor-element" data-tooltip-content="Comment">
+                <button type="submit" onClick={addComment} >✍</button>
+            </a>
             <p>{renderMycomment()} </p>
-
-        </div>
+            <Tooltip anchorSelect=".my-anchor-element" />
+        </div >
     );
 }
 export default Comment;

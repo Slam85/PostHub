@@ -1,5 +1,9 @@
 import { useReducer } from "react";
 import Comment from "../Comment/AComment";
+
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
+
 function Like() {
 
     function countReducer(state, like) {
@@ -24,11 +28,19 @@ function Like() {
     return (
         <div>
             <span> {like}&nbsp;j'aime </span>
-            <button onClick={() => updateLike("Like")}>❤️</button>
+            <a className="my-anchor-element" data-tooltip-content="Like">
+                <button onClick={() => updateLike("Like")}>❤️</button>
+            </a>
+            <a className="my-anchor-element" data-tooltip-content="Disliked">
+                <button onClick={() => updateLike("disLiked")}>💔</button>
+            </a>
 
-            <button onClick={() => updateLike("disLiked")}>💔</button>
 
 
+
+
+
+            <Tooltip anchorSelect=".my-anchor-element" />
 
             <Comment />
         </div>
