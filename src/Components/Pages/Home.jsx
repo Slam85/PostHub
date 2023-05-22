@@ -29,7 +29,7 @@ function Home() {
         if (data.success) {
           getAllPost();
         } else {
-          alert(data.message);
+          swal(data.message);
         }
       });
   }

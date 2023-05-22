@@ -37,7 +37,7 @@ function CreateAccount() {
         if (data.success) {
           navigate("/connection");
         } else {
-          alert(data.message);
+          swal(data.message);
         }
       });
   };

@@ -36,7 +36,7 @@ function HomeConnect() {
     if (data.success) {
       getAllPost();
     } else {
-      alert(data.message);
+      swal(data.message);
     }
   }
 
@@ -96,7 +96,7 @@ function HomeConnect() {
     if (data.success) {
       getAllPost();
     } else {
-      alert(data.message);
+      swal(data.message);
     }
   }
 

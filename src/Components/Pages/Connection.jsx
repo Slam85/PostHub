@@ -41,7 +41,7 @@ function Connection() {
     if (data.success) {
       navigate("/home");
     } else {
-      alert("Login Failed");
+      swal("Login Failed");
     }
   }
 

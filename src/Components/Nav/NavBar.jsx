@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Layouts/NavBar.css";
 import "../Layouts/Login.css";
+import swal from "sweetalert";
 
 function NavBar() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function NavBar() {
       localStorage.removeItem("password");
       navigate("/");
     } else {
-      alert("Signed In");
+      swal("Stay connected wiht us");
     }
   };
 
