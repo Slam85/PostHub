@@ -187,11 +187,16 @@ function HomeConnect() {
                 name="comment"
                 placeholder="Ajouter un commentaire"
               />
-              <button type="submit">Commenter</button>
+              <button type="submit">Comment</button>
             </form>
             {item.comments &&
               item.comments.map((comment) => (
-                <p key={comment._id}>{comment.content}</p>
+                <>
+                  <p key={comment._id}>{comment.content}</p>
+                  <p className="author">
+                    By: {item.firstname} {item.lastname}
+                  </p>
+                </>
               ))}
           </div>
         </div>
@@ -213,7 +218,7 @@ function HomeConnect() {
                 placeholder="Post Title"
                 className="form1"
               />
-              <imput
+              <input
                 type="text"
                 rows="5"
                 value={inputValue}
