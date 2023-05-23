@@ -8,6 +8,7 @@ function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
+  const [tel, setTel] = useState("");
   const [bio, setBio] = useState("");
 
   const [isEditing, setIsEditing] = useState(false);
@@ -30,7 +31,8 @@ function Profile() {
     setFirstName(data.firstname);
     setLastName(data.lastname);
     setEmail(data.email);
-    setBio(data.bio)
+    setBio(data.bio);
+    setTel(data.tel);
 
     console.log(data);
   }
@@ -51,6 +53,7 @@ function Profile() {
         lastname: lastName,
         email: email,
         bio: bio,
+        tel: tel,
       }),
     };
 
@@ -76,7 +79,8 @@ function Profile() {
       setFirstName(user.firstName);
       setLastName(user.lastName);
       setEmail(user.email);
-      setBio(user.bio)
+      setBio(user.bio);
+      setTel(user.tel);
     } else {
       getInfoProfil();
     }
@@ -146,6 +150,18 @@ function Profile() {
                       type="text"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
+                      className="form1"
+                    />
+                  </div>
+                </div>
+                <div className="bloc1">
+                  <div action="" method="get" className="bloc1">
+                    {" "}
+                    <label htmlFor="">Tel : </label>
+                    <input
+                      type="tel"
+                      value={tel}
+                      onChange={(e) => setTel(e.target.value)}
                       className="form1"
                     />
                   </div>
