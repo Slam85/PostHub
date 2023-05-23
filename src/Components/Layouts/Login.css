@@ -2,11 +2,12 @@ body {
   margin: 0;
 }
 
-.login {
+.search {
   display: flex;
-  background-color: #ccc;
+  background-color: #852d33;
   justify-content: space-between;
   align-items: center;
+  background-image: src;
 }
 .title {
   display: flex;
@@ -17,7 +18,6 @@ body {
   font-family: "Krona One", sans-serif;
   color: white;
   font-size: 3rem;
-  text-shadow: 2px 2px 2px black;
   margin-left: 10vw;
   margin-bottom: -3vh;
   margin-top: -3vh;
@@ -26,25 +26,30 @@ body {
 .buttonValider {
   padding-top: 4%;
   display: flex;
-  justify-content: end;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
-  width: 5vw;
-  height: 3vw;
-  background-color: #c7ecf6;
-  border-color: black;
+  width: 5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.498);
   text-decoration: none;
-  color: #333332;
-  border-radius: 11px;
+  color: white !important;
+  border-radius: 4px;
+  font-size: 1rem;
+  border: none;
+  padding: 1%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+button:hover {
+  background-color: #6110022c;
+  color: white;
+  font-weight: bolder;
 }
 
 h3 {
   color: #333332;
-}
-
-h5 {
-  color: green;
-  margin: 0.5rem;
-  text-align: center;
 }

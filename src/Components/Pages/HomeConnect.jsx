@@ -154,15 +154,17 @@ function HomeConnect() {
       return (
         <div key={item._id}>
           <div className="homeContainer">
-            <p className="contenuBloc">{item.title}</p>
+            <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
               Author: {item.firstname} {item.lastname}
             </p>
-            <button className="buttonLike" onClick={() => like(item._id)}>
-              ❤️
-            </button>{" "}
-            <span>{item.likes.length}</span>
+            <div className="likes">
+              <button className="buttonLike" onClick={() => like(item._id)}>
+                ❤️
+              </button>{" "}
+              <span>{item.likes.length}</span>
+            </div>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -192,7 +194,6 @@ function HomeConnect() {
     <div className="App">
       <Login />
       <div className="container">
-        <h1 className="pageTitle">PostHub Feed</h1>
         <form onSubmit={postPosts}>
           <div className="bloc2">
             <div className="posts">
@@ -203,17 +204,17 @@ function HomeConnect() {
                 placeholder="Post Title"
                 className="form1"
               />
-              <textarea
-                type="textarea"
+              <imput
+                type="text"
                 rows="5"
                 value={inputValue}
                 onChange={handleInputChange}
                 placeholder="Post Text"
-                className="form1"
+                className="createPost"
               />
             </div>
             <button type="submit" className="posterButton">
-              Poster
+              Submit
             </button>
           </div>
         </form>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../Nav/Footer";
 import Login from "../Nav/Login";
 import "../Layouts/Profile.css";
+import swal from "sweetalert";
 
 function Profile() {
   const [firstName, setFirstName] = useState("");

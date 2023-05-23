@@ -17,13 +17,29 @@ a:-webkit-any-link {
 .posts {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: 50%;
 }
 
+h5 {
+  color: white;
+  margin: 0.5rem;
+  text-align: center;
+}
 .posterButton {
-  margin-top: 5vw;
-  margin-left: 5vw;
-  border-radius: 10px;
+  width: 5rem;
+  height: 3vw;
+  background-color: white;
+  text-decoration: none;
+  color: #333332;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  border: none;
+  padding: 1%;
+}
+
+button:hover {
+  background-color: #e1bf25;
+  color: white;
 }
 
 .author {
@@ -42,11 +58,20 @@ a:-webkit-any-link {
 }
 
 .buttonLike {
-  border: none;
+  width: 5rem;
+  height: 3vw;
   background-color: white;
-  width: 3vw;
-  margin-left: 2%;
-  margin-bottom: 1%;
+  text-decoration: none;
+  color: #333332;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  border: none;
+  padding: 1%;
+}
+
+button:hover {
+  background-color: #e1bf25;
+  color: white;
 }
 
 .contenuBloc {

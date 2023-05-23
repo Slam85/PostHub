@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
 import Login from "../Nav/Login";
+import swal from "sweetalert";
 
 function Home() {
   const [allPosts, setAllPosts] = useState([]);
@@ -40,12 +41,14 @@ function Home() {
         return (
           <div key={index}>
             <div className="homeContainer">
-              <p className="contenuBloc">{item.title}</p>
+              <p className="titreBloc">{item.title}</p>
               <p className="contenuBloc">{item.content}</p>
-              <button className="buttonLike" onClick={() => like(item._id)}>
-                ❤️
-              </button>{" "}
-              <span>{item.likes.length}</span>
+              <div className="likes">
+                <button className="buttonLike" onClick={() => like(item._id)}>
+                  ❤️
+                </button>{" "}
+                <span>{item.likes.length}</span>
+              </div>
             </div>
           </div>
         );
@@ -80,8 +83,6 @@ function Home() {
     <div className="App">
       <Login />
       <div className="container">
-        <h1 className="pageTitle">PostHub Feed</h1>
-
         <div>
           <div className="form2">
             <div action="" method="get" className="bloc1">

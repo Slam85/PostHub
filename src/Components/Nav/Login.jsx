@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../Images/logo.jpg";
-import NavBar from "./NavBar";
+import NavBar from "../Nav/NavBar";
+import "../Layouts/Login.css";
 
 function Login() {
   async function getInfoProfil() {
@@ -19,11 +19,10 @@ function Login() {
   }
 
   return (
-    <div className="login">
-      <img src={logo} alt="logo" className="logo" />
-      <div>
-        <h1 className="titre">PostHub</h1>
-      </div>
+    <div className="search">
+      {/* <img src={'./logo.png'} alt="logo" className="logo" /> */}
+      <img src={"./posthub.png"} alt="logo" className="logoComplet" />
+      <div></div>
 
       {!localStorage.getItem("token") ? (
         <div className="textNotConnect">
@@ -31,7 +30,6 @@ function Login() {
         </div>
       ) : (
         <div className="textConnect">
-          <h5>Connected</h5>
           <NavBar />
         </div>
       )}

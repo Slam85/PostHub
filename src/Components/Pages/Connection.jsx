@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import Footer from "../Nav/Footer";
 import Login from "../Nav/Login";
+import "../Layouts/navStyle.css";
+import "../Layouts/CreateAccount.css";
+import "../Layouts/NavBar.css";
+import "../Layouts/Login.css";
 import { useNavigate } from "react-router-dom";
+import swal from "sweetalert";
 
 function Connection() {
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
@@ -39,7 +44,7 @@ function Connection() {
     localStorage.setItem("token", data.token);
 
     if (data.success) {
-      swal("Welcome!", "You as connected!", "success");
+      swal("Welcome!", "You are connected!", "success");
       navigate("/home");
     } else {
       swal("Sign in failed!", "Confirm e-mail and/or password", "error");
@@ -71,9 +76,7 @@ function Connection() {
             ></input>
           </div>
           <div className="buttonValider">
-            <button className="btn" onClick={handleSubmit}>
-              Log in
-            </button>
+            <button onClick={handleSubmit}>Log in</button>
           </div>
         </div>
       </div>

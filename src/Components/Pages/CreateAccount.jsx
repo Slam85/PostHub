@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../Nav/Footer";
 import Login from "../Nav/Login";
 import "../Layouts/CreateAccount.css";
+import swal from "sweetalert";
 
 function CreateAccount() {
   const [firstName, setFirstName] = useState("");
