@@ -117,53 +117,55 @@ function Profile() {
           <div className="container">
             <div className="backprofils" >
               <h1 className="pageTitle">Profile</h1>
-
               <div className="username">
-                <div className="bloc1">
-                  <div action="" className="bloc1" method="get">
-                    <label htmlFor="">Lastname : </label>
-                    <input
-                      type="text"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      className="form1"
-                    />
+                <div className="row">
+                  <div className="bloc1">
+                    <div action="" className="bloc1" method="get">
+                      <label htmlFor="">Lastname : </label>
+                      <input
+                        type="text"
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        className="form1"
+                      />
+                    </div>
+                  </div>
+                  <div className="bloc1">
+                    <div action="" method="get" className="bloc1">
+                      <label htmlFor="">Firstname : </label>
+                      <input
+                        type="text"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        className="form1"
+                      />
+                    </div>
                   </div>
                 </div>
-
-                <div className="bloc1">
-                  <div action="" method="get" className="bloc1">
-                    <label htmlFor="">Firstname : </label>
-                    <input
-                      type="text"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
-                      className="form1"
-                    />
+                <div className="row">
+                  <div className="bloc1">
+                    <div action="" method="get" className="bloc1">
+                      {" "}
+                      <label htmlFor="">E-mail : </label>
+                      <input
+                        type="text"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="form1"
+                      />
+                    </div>
                   </div>
-                </div>
-                <div className="bloc1">
-                  <div action="" method="get" className="bloc1">
-                    {" "}
-                    <label htmlFor="">E-mail : </label>
-                    <input
-                      type="text"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="form1"
-                    />
-                  </div>
-                </div>
-                <div className="bloc1">
-                  <div action="" method="get" className="bloc1">
-                    {" "}
-                    <label htmlFor="">Tel : </label>
-                    <input
-                      type="tel"
-                      value={tel}
-                      onChange={(e) => setTel(e.target.value)}
-                      className="form1"
-                    />
+                  <div className="bloc1">
+                    <div action="" method="get" className="bloc1">
+                      {" "}
+                      <label htmlFor="">Tel : </label>
+                      <input
+                        type="tel"
+                        value={tel}
+                        onChange={(e) => setTel(e.target.value)}
+                        className="form1"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
