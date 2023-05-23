@@ -42,18 +42,18 @@ function NavBar() {
         ) : (
           <>
             {/* <button className="btn"> */}
-            <Link to="/" className="btn">
+            <Link to="/" className="btnHome">
               Home
             </Link>
             {/* </button> */}
             <div className="noConnect">
               {/* <button className="btn"> */}
-              <Link to="/register" className="btn">
+              <Link to="/register" className="btnHome">
                 Create account
               </Link>
               {/* </button> */}
               {/* <button className="btn"> */}
-              <Link to="/connection" className="btn">
+              <Link to="/connection" className="btnHome">
                 Sign In
               </Link>
               {/* </button> */}

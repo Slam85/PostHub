@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import NavBar from "../Nav/NavBar";
 import "../Layouts/Login.css";
+import "../Layouts/CreateAccount.css";
 
 function Login() {
   async function getInfoProfil() {

@@ -58,11 +58,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 1em;
   font-size: 1rem;
-  box-sizing: content-box;
-  height:80%;
-  width: 80%;
 }
 
 .form1 {
@@ -121,6 +117,19 @@ body {
   flex-direction: column;
   width: 80vw;
   padding-right: 17vw;
+  padding-top:8vw;
+}
+
+.containerLogin{
+  background: linear-gradient(to top, #6110026f, #f1efef);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  padding-right: 17vw;
+  padding-top:8vw;
 }
 
 .pageTitle {
@@ -222,6 +231,19 @@ body {
   box-sizing: content-box;
   width: 80%;
   justify-content:center;
+  align-items: center;
+}
+
+.blocLogin {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin-top: -2em;
+  margin-bottom: 0;
+  box-sizing: content-box;
+  width: 80%;
+  justify-content:center;
+  align-items: center;
 }
 
 .displayComments {
@@ -235,4 +257,56 @@ body {
   background-color: #88888815;
   border-radius: 4px;
   padding: 0.5rem;
+}
+
+.displayLogin {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-top:5em;
+  margin-left: 1em;
+  color: #611002;
+}
+
+.textLogin {
+  color: #611002;
+  font-size: 1.5em;
+}
+
+.inputEmailLogin {
+  padding: 1em;
+  width: 30vw;
+  height: 2rem;
+  border: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #eff1f0a9;
+  border-radius: 4px;
+  margin-top: 1vh;
+  margin-left: 0;
+  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+  text-align: left;
+  color: #852d33;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputPasswordLogin {
+  padding: 1em;
+  width: 30vw;
+  height: 2rem;
+  border: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #eff1f0a9;
+  border-radius: 4px;
+  margin-top: 1vh;
+  margin-left: 0;
+  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+  text-align: left;
+  color: #852d33;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
 }
