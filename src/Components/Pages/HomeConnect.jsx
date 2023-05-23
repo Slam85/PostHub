@@ -3,6 +3,8 @@ import swal from "sweetalert";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
 import Login from "../Nav/Login";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 function HomeConnect() {
   const [inputValue, setInputValue] = useState("");
@@ -157,12 +159,19 @@ function HomeConnect() {
             <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
-            {item.firstname} {item.lastname}
+              By: {item.firstname} {item.lastname}
             </p>
             <div className="likes">
-              <button className="buttonLike" onClick={() => like(item._id)}>
-                ❤️
-              </button>{" "}
+              <a
+                className="my-anchor-element"
+                data-tooltip-content="Like"
+                data-tooltip-place="left"
+              >
+                <button className="buttonLike" onClick={() => like(item._id)}>
+                  ❤️
+                </button>{" "}
+              </a>
+              <Tooltip anchorSelect=".my-anchor-element" />
               <span>{item.likes.length}</span>
             </div>
             <form
@@ -179,7 +188,7 @@ function HomeConnect() {
                 name="comment"
                 placeholder="Ajouter un commentaire"
               />
-              <button className="commentBtn" type="submit">Commenter</button>
+              <button className="commentBtn" type="submit">Comment</button>
               </div>
             </form>
             <div className="displayComments">
