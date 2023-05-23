@@ -208,7 +208,7 @@ function HomeConnect() {
                 placeholder="Post Title"
                 className="form1"
               />
-              <imput
+              <input
                 type="text"
                 rows="5"
                 value={inputValue}
