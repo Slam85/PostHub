@@ -1,21 +1,9 @@
-import { useState } from 'react';
-
-import './App.css';
-import { Link } from 'react-router-dom';
-import Like from './Like/Like';
-import Comment from './Comment/AComment';
+import { router } from "./Routes";
+import { RouterProvider } from "react-router-dom";
+import "./App.css";
 
 function App() {
-
-
-  return (
-    <>
-
-
-      <Like />
-
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
