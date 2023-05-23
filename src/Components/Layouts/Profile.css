@@ -1,0 +1,30 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blocProfil {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2vw;
+  padding-right: 2vw;
+  text-align: center;
+}
+
+.formId {
+  text-align: left;
+}
+
+.formInputDescription {
+  height: 9vh;
+}
+
+textarea {
+  border-color: #333332;
+}
+
+.buttonToChangeValid {
+  margin-top: 3vh;
+  margin-left: 30vw;
+  border-radius: 10px;
+}

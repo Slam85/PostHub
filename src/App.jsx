@@ -1,22 +1,9 @@
-import './App.css';
-import Connexion from './connexion/Connexion';
-import Creation from './creation/Creation';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { router } from "./Routes";
+import { RouterProvider } from "react-router-dom";
+import "./App.css";
 
 function App() {
-
-  return (
-    
-    <div>
-        <BrowserRouter>
-        <Routes>
-            <Route path='/creation' element={<Creation />} />
-            <Route path='/connexion' element={<Connexion />} />
-        </Routes>    
-        </BrowserRouter>
-
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
