@@ -157,7 +157,7 @@ function HomeConnect() {
             <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
-              Author: {item.firstname} {item.lastname}
+            {item.firstname} {item.lastname}
             </p>
             <div className="likes">
               <button className="buttonLike" onClick={() => like(item._id)}>
@@ -173,17 +173,21 @@ function HomeConnect() {
                 e.target.reset();
               }}
             >
-              <input
+              <div className="commentsContainer">
+              <input className="inputComment"
                 type="text"
                 name="comment"
                 placeholder="Ajouter un commentaire"
               />
-              <button type="submit">Commenter</button>
+              <button className="commentBtn" type="submit">Commenter</button>
+              </div>
             </form>
+            <div className="displayComments">
             {item.comments &&
               item.comments.map((comment) => (
-                <p key={comment._id}>{comment.content}</p>
+                <p className="pComments" key={comment._id}>{comment.content}</p>
               ))}
+              </div>
           </div>
         </div>
       );

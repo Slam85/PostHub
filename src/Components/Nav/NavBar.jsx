@@ -36,7 +36,7 @@ function NavBar() {
                 Profile
               </Link>
               {/* </button> */}
-              <button onClick={handleSubmit}>Sign Out</button>
+              <button onClick={handleSubmit} className="btnProfile">Sign Out</button>
             </div>
           </>
         ) : (
