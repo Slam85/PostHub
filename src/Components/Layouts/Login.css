@@ -4,11 +4,11 @@ body {
 
 .search {
   display: flex;
+  position: fixed;
   flex-direction: row;
   background-color: #852d33;
   justify-content: space-between;
   align-items: center;
-  background-image: src;
   width: 100vw;
 }
 .title {
