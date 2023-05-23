@@ -39,6 +39,7 @@ function NavBar() {
               <button className="btnProfile" onClick={handleSubmit}>
                 Sign Out
               </button>
+
             </div>
           </>
         ) : (
