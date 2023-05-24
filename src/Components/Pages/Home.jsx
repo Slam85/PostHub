@@ -37,7 +37,7 @@ function Home() {
 
   const renderMyPosts = () => {
     if (allPosts.length >= 0) {
-      return allPosts.map((item, index) => {
+      return allPosts.slice(0, 4).map((item, index) => {
         return (
           <div key={index}>
             <div className="homeContainer">
