@@ -92,36 +92,36 @@ function Profile() {
       <div className="home">
         {isEditing === false ? (
           <div className="container">
-            <h1 className="pageTitle">Profile</h1>
+            <div className="containerInfo">
             <div action="" className="bloc1" method="get" />
-            <label htmlFor="">Lastname : </label>
+            <label htmlFor="">Last Name : </label>
             <div className="form1">{lastName}</div>
             <div action="" className="bloc1" method="get" />
             <div>
-              <label htmlFor="">Firstname : </label>
+              <label htmlFor="">First Name : </label>
               <div className="form1">{firstName}</div>
             </div>
             <div action="" className="bloc1" method="get" />{" "}
-
             <div>
               <label htmlFor="">Bio: </label>
               <div className="form1">{bio}</div>
             </div>
-
+            </div>
+            <div className="containerEditInfo">
             <div action="" className="bloc1" method="get" />{" "}
             <button className="buttonToChangeValid" onClick={handleEditClick}>
               Change
             </button>{" "}
+            </div>
           </div>
         ) : isEditing === true ? (
           <div className="container">
             <div className="backprofils" >
-              <h1 className="pageTitle">Profile</h1>
               <div className="username">
                 <div className="row">
                   <div className="bloc1">
                     <div action="" className="bloc1" method="get">
-                      <label htmlFor="">Lastname : </label>
+                      <label htmlFor="">Last Name : </label>
                       <input
                         type="text"
                         value={lastName}
@@ -132,7 +132,7 @@ function Profile() {
                   </div>
                   <div className="bloc1">
                     <div action="" method="get" className="bloc1">
-                      <label htmlFor="">Firstname : </label>
+                      <label htmlFor="">First Name : </label>
                       <input
                         type="text"
                         value={firstName}
