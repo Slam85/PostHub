@@ -4,12 +4,12 @@ body {
 
 .search {
   display: flex;
+  position: fixed;
   flex-direction: row;
   position: fixed;
   background-color: #852d33;
   justify-content: space-between;
   align-items: center;
-  background-image: src;
   width: 100vw;
 }
 .title {
@@ -45,7 +45,7 @@ button {
   height: 2.5rem;
   background-color: rgba(255, 255, 255, 0.498);
   text-decoration: none;
-  color: #852d33!important;
+  color: #852d33 !important;
   border-radius: 4px;
   font-size: 1rem;
   border: none;

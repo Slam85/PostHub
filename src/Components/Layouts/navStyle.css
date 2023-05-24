@@ -77,4 +77,11 @@ button:hover {
 
 .contenuBloc {
   margin-left: 2%;
+<<<<<<< HEAD
 }
+=======
+}
+body::-webkit-scrollbar {
+  width: 0;
+}
+>>>>>>> b677642ae6852c160b76be3753db5620a7db61a7

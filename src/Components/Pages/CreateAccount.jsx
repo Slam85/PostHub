@@ -11,6 +11,7 @@ function CreateAccount() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +26,7 @@ function CreateAccount() {
         password: password,
         firstname: firstName,
         lastname: lastName,
+
       }),
     };
     console.log("option", options);

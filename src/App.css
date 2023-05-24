@@ -118,7 +118,6 @@ body {
   flex-direction: column;
   width: 80vw;
   padding-right: 17vw;
-  padding-top: 8vw;
   box-sizing: content-box;
 }
 
@@ -132,6 +131,9 @@ body {
   padding-right: 10vw;
   padding-left: 10vw;
   padding-top: 8vw;
+  box-sizing: content-box;
+  padding-top: 8vw;
+  box-sizing: content-box;
   box-sizing: content-box;
 }
 
@@ -196,7 +198,7 @@ body {
   width: auto;
   height: 2rem;
   margin: 0;
-  padding: 0;
+  padding: 4em;
 }
 
 .inputComment {
