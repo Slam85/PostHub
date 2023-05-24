@@ -158,45 +158,26 @@ function HomeConnect() {
           <div className="homeContainer">
             <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
-            <p className="author">
-              By: {item.firstname} {item.lastname}
-            </p>
-            <div className="likes">
-              <a
-                className="my-anchor-element"
-                data-tooltip-content="Like"
-                data-tooltip-place="left"
-              >
-                <button className="buttonLike" onClick={() => like(item._id)}>
-                  ❤️
-                </button>{" "}
-              </a>
-              <Tooltip anchorSelect=".my-anchor-element" />
-              <span>{item.likes.length}</span>
-            </div>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const commentText = e.target.comment.value;
-                addComment(item._id, commentText);
-                e.target.reset();
-              }}
-            >
-              <div className="commentsContainer">
-              <input className="inputComment"
-                type="text"
-                name="comment"
-                placeholder="Ajouter un commentaire"
-              />
-              <button className="commentBtn" type="submit">Comment</button>
-              </div>
-            </form>
-            <div className="displayComments">
-            {item.comments &&
-              item.comments.map((comment) => (
-                <p className="pComments" key={comment._id}>{comment.content}</p>
-              ))}
-              </div>
+            <p className="author"> By: {item.firstname} {item.lastname}</p>
+              <form onSubmit={(e) => {
+                e.preventDefault(); const commentText = e.target.comment.value; addComment(item._id, commentText); e.target.reset(); }}>
+                <div className="commentsContainer">
+                  <input className="inputComment" type="text" name="comment" placeholder="Ajouter un commentaire" />
+                    <button className="commentBtn" type="submit">Comment</button>
+                </div>
+                <div className="likes">
+                  <a className="my-anchor-element" data-tooltip-content="Like" data-tooltip-place="left">
+                  <button className="buttonLike" onClick={() => like(item._id)}>❤️</button>{" "}
+                  </a>
+                  <Tooltip anchorSelect=".my-anchor-element" />
+                  <span>{item.likes.length}</span>    
+                </div>                   
+                <div className="displayComments">
+                  {item.comments && item.comments.map((comment) => (
+                  <p className="pComments" key={comment._id}>{comment.content}</p>
+                  ))}
+                </div>
+              </form>
           </div>
         </div>
       );
@@ -206,33 +187,18 @@ function HomeConnect() {
   return (
     <div className="App">
       <Login />
-      <div className="container">
-        <form onSubmit={postPosts}>
-          <div className="bloc2">
-            <div className="posts">
-              <input
-                type="text"
-                value={inputTitle}
-                onChange={handleInputChange2}
-                placeholder="Post Title"
-                className="form1"
-              />
-              <input
-                type="text"
-                rows="5"
-                value={inputValue}
-                onChange={handleInputChange}
-                placeholder="Post Text"
-                className="createPost"
-              />
+        <div className="containerHome">
+          <form onSubmit={postPosts}>
+            <div className="bloc2">
+              <div className="posts">
+                <input type="text" value={inputTitle} onChange={handleInputChange2} placeholder="Post Title" className="form1"/>
+                <input type="text" rows="5" value={inputValue} onChange={handleInputChange} placeholder="Post Text" className="createPost" />
+              </div>
+            <button type="submit" className="posterButton"> Submit </button>
             </div>
-            <button type="submit" className="posterButton">
-              Submit
-            </button>
-          </div>
-        </form>
-        <div className="form2">
-          <div action="" method="get" className="bloc1">
+          </form>
+        <div>
+          <div action="" method="get">
             {renderMyPosts()}
           </div>
         </div>
