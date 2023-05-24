@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import swal from "sweetalert";
 import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 function HomeConnect() {
   const [inputValue, setInputValue] = useState("");
@@ -36,7 +38,7 @@ function HomeConnect() {
     if (data.success) {
       getAllPost();
     } else {
-      alert(data.message);
+      swal(data.message);
     }
   }
 
@@ -44,17 +46,63 @@ function HomeConnect() {
     getAllPost();
   }, []);
 
-  function handleInputChange(event) {
-    setInputValue(event.target.value);
+  async function addComment(postId, commentText) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "bearer " + localStorage.getItem("token"),
+      },
+      body: JSON.stringify({
+        postId: postId,
+        content: commentText,
+      }),
+    };
+
+    const response = await fetch(
+      `https://social-network-api.osc-fr1.scalingo.io/post-hub/post/comment`,
+      options
+    );
+    const data = await response.json();
+
+    if (data.success) {
+      getAllPost();
+    } else {
+      swal(data.message);
+    }
   }
-  function handleInputChange2(event) {
-    setInputTitle(event.target.value);
+
+  async function getAllPost() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const response = await fetch(
+      "https://social-network-api.osc-fr1.scalingo.io/post-hub/posts?page=0&limit=10",
+      options
+    );
+    const data = await response.json();
+
+    if (data.success) {
+      setAllPosts(data.posts);
+    } else {
+      swal(data.message);
+    }
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    postPosts();
-    setInputValue("");
-    setInputTitle("");
+
+  useEffect(() => {
+    getAllPost();
+  }, []);
+
+  function handleInputChange(e) {
+    setInputValue(e.target.value);
+  }
+
+  function handleInputChange2(e) {
+    setInputTitle(e.target.value);
   }
 
   async function getInfoProfil() {
@@ -69,14 +117,15 @@ function HomeConnect() {
       `https://social-network-api.osc-fr1.scalingo.io/post-hub/user`,
       options
     );
-
     const data = await response.json();
   }
   useEffect(() => {
     getInfoProfil();
   }, []);
 
-  async function postPosts() {
+  async function postPosts(e) {
+    e.preventDefault();
+
     const options = {
       method: "POST",
       headers: {
@@ -88,62 +137,77 @@ function HomeConnect() {
         content: inputValue,
       }),
     };
+
     const response = await fetch(
       "https://social-network-api.osc-fr1.scalingo.io/post-hub/post",
       options
     );
     const data = await response.json();
+
     if (data.success) {
       getAllPost();
     } else {
-      alert(data.message);
+      swal(data.message);
     }
   }
 
   const renderMyPosts = () => {
-    return allPosts.slice(0, 6).map((item, index) => {
+    return allPosts.map((item) => {
       return (
-        <div key={index}>
+        <div key={item._id}>
           <div className="homeContainer">
             <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
-              {" "}
-              Author : {item.firstname} {item.lastname}
+              By: {item.firstname} {item.lastname}
             </p>
             <div className="likes">
-            <button className="buttonLike" onClick={() => like(item._id)}>
-              ❤️
-            </button>{" "}
-            <span>{item.likes.length}</span>
+              <a
+                className="my-anchor-element"
+                data-tooltip-content="Like"
+                data-tooltip-place="left"
+              >
+                <button className="buttonLike" onClick={() => like(item._id)}>
+                  ❤️
+                </button>{" "}
+              </a>
+              <Tooltip anchorSelect=".my-anchor-element" />
+              <span>{item.likes.length}</span>
             </div>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const commentText = e.target.comment.value;
+                addComment(item._id, commentText);
+                e.target.reset();
+              }}
+            >
+              <div className="commentsContainer">
+              <input className="inputComment"
+                type="text"
+                name="comment"
+                placeholder="Ajouter un commentaire"
+              />
+              <button className="commentBtn" type="submit">Comment</button>
+              </div>
+            </form>
+            <div className="displayComments">
+            {item.comments &&
+              item.comments.map((comment) => (
+                <p className="pComments" key={comment._id}>{comment.content}</p>
+              ))}
+              </div>
           </div>
         </div>
       );
     });
   };
 
-  async function getAllPost() {
-    const options = {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    let response = await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/post-hub/posts?page=0&limit=10",
-      options
-    );
-    let data = await response.json();
-
-    setAllPosts(data.posts);
-  }
-
   return (
     <div className="App">
-      <Search />
+      <Login />
       <div className="container">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={postPosts}>
           <div className="bloc2">
             <div className="posts">
               <input
@@ -162,14 +226,10 @@ function HomeConnect() {
                 className="createPost"
               />
             </div>
+            <button type="submit" className="posterButton">
+              Submit
+            </button>
           </div>
-          <button
-            type="submit"
-            onClick={handleSubmit}
-            className="posterButton"
-          >
-            Poster
-          </button>
         </form>
         <div className="form2">
           <div action="" method="get" className="bloc1">
@@ -177,10 +237,7 @@ function HomeConnect() {
           </div>
         </div>
       </div>
-
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </div>
   );
 }

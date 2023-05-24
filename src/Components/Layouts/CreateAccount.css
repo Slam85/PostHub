@@ -1,31 +1,17 @@
-.form1 {
-  width: 30vw;
-  height:2rem;
-  border: none;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color:rgba(255, 255, 255, 0.498);
-  border-radius: 4px;
-  margin-top: 1vh;
-  margin-left: 0;
-  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
-  text-align: left;
-  padding: 0.5em;
-  color:#852d33;
-}
-
 .createPost {
-  width: 60vw;
-  height:10rem;
+  width: 100%;
+  height: 10rem;
   border: none;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  background-color:rgba(255, 255, 255, 0.498);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #eff1f0a9;
   border-radius: 4px;
   margin-top: 1vh;
-  margin-left: 0;
   box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
-  text-align:start;
+  text-align: start;
   padding: 0.5em;
-  color:#852d33;
+  color: #852d33;
+  display: flex;
+  flex-direction: row;
 }
 
 .form2 {
@@ -34,24 +20,29 @@
   align-content: center;
   align-items: center;
   margin-bottom: 10vh;
+<<<<<<< HEAD
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+=======
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+>>>>>>> hel
   border-radius: 4px;
-  border:none;
+  border: none;
   width: 80%;
-  padding: 1em;
+  padding-top: 1em;
+  margin-left:-1em;
 }
 
 .container {
-  justify-content:space-evenly;
   align-items: center;
   height: 100vh;
   width: cover;
   border-radius: 4px;
-  background-color:#e6e6e6;
+  background-color: #e6e6e6;
   padding-left: 3vw;
   padding-right: 3vw;
-  padding-top:0;
+  padding-top: 0;
   padding-bottom: 0;
+<<<<<<< HEAD
   color:#333332;
 }
 
@@ -66,21 +57,133 @@
   padding:0;
   justify-content: space-evenly;
   justify-content: left;
+=======
+  color: #333332;
+>>>>>>> hel
 }
 
 label {
   color: black;
 }
+
+.labelCreate{
+  color: #852d33;
+}
+
 .bodyAccount {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height:100vh;
 }
+
 .containerTitle {
   color: #333332;
   text-align: center;
 }
 
 .buttonInscription {
-  margin-top: 3vh;
-  margin-left: 28vw;
+ display: flex;
+ flex-direction: row;
+ align-items: center;
 }
+
+.divButtonCreate{
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  margin-left:11em;
+  margin-top: 0;
+}
+
+.containerMillieu {
+  height:100vh;
+}
+
+.inputEmailCreate{
+width: 30vw;
+height: 2rem;
+border: none;
+font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+background-color: #eff1f0a9;
+border-radius: 4px;
+margin-top: 1vh;
+margin-left: 0;
+box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+text-align: left;
+padding: 0.5em;
+color: #852d33;
+box-sizing: content-box;
+display: flex;
+flex-direction: column;
+align-items: left;
+}
+
+.inputPasswordCreate{
+  width: 30vw;
+  height: 2rem;
+  border: none;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  background-color: #eff1f0a9;
+  border-radius: 4px;
+  margin-top: 1vh;
+  margin-left: 0;
+  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+  text-align: left;
+  padding: 0.5em;
+  color: #852d33;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  }
+
+  .inputFirstNameCreate{
+    width: 30vw;
+    height: 2rem;
+    border: none;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    background-color: #eff1f0a9;
+    border-radius: 4px;
+    margin-top: 1vh;
+    margin-left: 0;
+    box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+    text-align: left;
+    padding: 0.5em;
+    color: #852d33;
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    }
+
+    .inputLastNameCreate{
+      width: 30vw;
+      height: 2rem;
+      border: none;
+      font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      background-color: #eff1f0a9;
+      border-radius: 4px;
+      margin-top: 1vh;
+      margin-left: 0;
+      box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+      text-align: left;
+      padding: 0.5em;
+      color: #852d33;
+      box-sizing: content-box;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      }
+
+  .divCreate{
+    height:65vh;
+    width:50vw;
+    padding:1em;
+    margin-left:15em;
+    margin-top: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

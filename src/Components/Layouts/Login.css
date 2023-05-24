@@ -4,10 +4,13 @@ body {
 
 .search {
   display: flex;
+  flex-direction: row;
+  position: fixed;
   background-color: #852d33;
   justify-content: space-between;
   align-items: center;
   background-image: src;
+  width: 100vw;
 }
 .title {
   display: flex;
@@ -30,23 +33,30 @@ body {
   align-items: center;
 }
 
+.buttonValiderLogin {
+  padding-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   width: 5rem;
   height: 2.5rem;
   background-color: rgba(255, 255, 255, 0.498);
   text-decoration: none;
-  color:white !important;
-  border-radius:4px;
+  color: #852d33!important;
+  border-radius: 4px;
   font-size: 1rem;
   border: none;
-  padding:1%;
+  padding: 1%;
   text-align: center;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 button:hover {
-  background-color:#6110022c;
-  color: white;
+  background-color: #6110022c;
+  color: white !important;
   font-weight: bolder;
 }
 

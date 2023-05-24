@@ -31,14 +31,14 @@ h5 {
   background-color: white;
   text-decoration: none;
   color: #333332;
-  border-radius:6px;
+  border-radius: 6px;
   font-size: 0.8rem;
   border: none;
-  padding:1%;
+  padding: 1%;
 }
 
 button:hover {
-  background-color:#e1bf25;
+  background-color: #e1bf25;
   color: white;
 }
 
@@ -57,19 +57,20 @@ button:hover {
   font-size: 10px;
 }
 
-.buttonLike {width: 5rem;
+.buttonLike {
+  width: 5rem;
   height: 3vw;
   background-color: white;
   text-decoration: none;
   color: #333332;
-  border-radius:6px;
+  border-radius: 6px;
   font-size: 0.8rem;
   border: none;
-  padding:1%;
+  padding: 1%;
 }
 
 button:hover {
-  background-color:#e1bf25;
+  background-color: #e1bf25;
   color: white;
 }
 

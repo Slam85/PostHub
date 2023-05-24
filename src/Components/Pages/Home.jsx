@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../Nav/Footer"; 
 import "../Layouts/navStyle.css";
-import Search from "../Nav/Search";
+import Login from "../Nav/Login";
+import swal from "sweetalert";
 
 function Home() {
   const [allPosts, setAllPosts] = useState([]);
@@ -29,24 +30,25 @@ function Home() {
         if (data.success) {
           getAllPost();
         } else {
-          alert(data.message);
+          swal(data.message);
         }
       });
   }
 
   const renderMyPosts = () => {
     if (allPosts.length >= 0) {
-      return allPosts.slice(0, 6).map((item, index) => {
+      return allPosts.slice(0, 4).map((item, index) => {
         return (
           <div key={index}>
             <div className="homeContainer">
               <p className="titreBloc">{item.title}</p>
               <p className="contenuBloc">{item.content}</p>
               <div className="likes">
-              <button className="buttonLike" onClick={() => like(item._id)}>
-                ❤️
-              </button>{" "}
-              <span>{item.likes.length}</span>
+                <button className="buttonLike" onClick={() => like(item._id)}>
+                  ❤️
+                </button>{" "}
+                <span>{item.likes.length}</span>
+              </div>
             </div>
             </div>
           </div>
@@ -80,7 +82,7 @@ function Home() {
 
   return (
     <div className="App">
-      <Search />
+      <Login />
       <div className="container">
         <div>
           <div className="form2">

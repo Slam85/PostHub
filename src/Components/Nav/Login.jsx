@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import logo from "../Images/logo.jpg";
 import NavBar from "../Nav/NavBar";
-import "../Layouts/Search.css";
+import "../Layouts/Login.css";
+import "../Layouts/CreateAccount.css";
 
-function Search() {
+function Login() {
   async function getInfoProfil() {
     const options = {
       method: "GET",
@@ -22,9 +22,8 @@ function Search() {
   return (
     <div className="search">
       {/* <img src={'./logo.png'} alt="logo" className="logo" /> */}
-      <img src={'./posthub.png'} alt="logo" className="logoComplet" />
-      <div>
-      </div>
+      <img src={"./posthub.png"} alt="logo" className="logoComplet" />
+      <div></div>
 
       {!localStorage.getItem("token") ? (
         <div className="textNotConnect">
@@ -39,4 +38,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default Login;
