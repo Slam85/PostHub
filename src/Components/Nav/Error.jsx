@@ -1,13 +1,12 @@
 import React from "react";
 import Footer from "../Nav/Footer";
-import Login from "../Nav/Login";
 import "../Layouts/navStyle.css";
 import "../Layouts/Error.css";
 
 function Error() {
   return (
     <div>
-      <Login />
+      <NavBar />
       <div className="home">
         <section class="page_404">
           <div class="container">

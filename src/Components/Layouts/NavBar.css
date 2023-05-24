@@ -1,4 +1,3 @@
-/* NAVBAR */
 .navBar {
   display: flex;
   justify-content: center;
@@ -7,7 +6,7 @@
   align-items: center;
 }
 
-.navBtn {
+.navButtons {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -94,4 +93,70 @@
   background-color: #e1be25a4;
   color: white;
   font-weight: bolder;
+}
+
+body {
+  margin: 0;
+}
+
+.navLogin {
+  display: flex;
+  position: fixed;
+  flex-direction: row;
+  position: fixed;
+  background-color: #852d33;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.titre {
+  font-family: "Krona One", sans-serif;
+  color: white;
+  font-size: 3rem;
+  margin-left: 10vw;
+  margin-bottom: -3vh;
+  margin-top: -3vh;
+}
+
+.buttonValider {
+  padding-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonValiderLogin {
+  padding-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 255, 255, 0.498);
+  text-decoration: none;
+  color: #852d33 !important;
+  border-radius: 4px;
+  font-size: 1rem;
+  border: none;
+  padding: 1%;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+button:hover {
+  background-color: #6110022c;
+  color: white !important;
+  font-weight: bolder;
+}
+
+h3 {
+  color: #333332;
 }

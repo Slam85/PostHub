@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Nav/Footer";
-import Login from "../Nav/Login";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/CreateAccount.css";
 import swal from "sweetalert";
 
@@ -49,7 +49,7 @@ function CreateAccount() {
 
   return (
     <div>
-      <Login />
+      <NavBar />
       <div className="bodyAccount">
         <div className="container">
           <div className="divCreate">

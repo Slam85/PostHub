@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../Nav/Footer";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/navStyle.css";
-import Login from "../Nav/Login";
 import swal from "sweetalert";
 
 function Home() {
@@ -81,7 +81,7 @@ function Home() {
 
   return (
     <div className="App">
-      <Login />
+      <NavBar />
       <div className="container">
         <div>
           <div className="form2">

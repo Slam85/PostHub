@@ -4,7 +4,6 @@ import Error from "./Components/Nav/Error";
 import Home from "./Components/Pages/Home";
 import Footer from "./Components/Nav/Footer";
 import NavBar from "./Components/Nav/NavBar";
-import Login from "./Components/Nav/Login";
 import Connection from "./Components/Pages/Connection";
 import Profile from "./Components/Pages/Profile";
 import CreateAccount from "./Components/Pages/CreateAccount";
@@ -45,11 +44,6 @@ export const router = createBrowserRouter([
   {
     path: "/footer",
     element: <Footer />,
-    errorElement: <Error />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
     errorElement: <Error />,
   },
 ]);

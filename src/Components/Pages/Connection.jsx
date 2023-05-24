@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import Footer from "../Nav/Footer";
-import Login from "../Nav/Login";
 import "../Layouts/navStyle.css";
 import "../Layouts/CreateAccount.css";
 import "../Layouts/NavBar.css";
-import "../Layouts/Login.css";
+import NavBar from "../Nav/NavBar";
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
@@ -53,7 +52,7 @@ function Connection() {
 
   return (
     <div className="connection">
-      <Login />
+      <NavBar />
       <div className="containerMillieu">
         <div className="containerLogin">
           <div className="displayLogin">

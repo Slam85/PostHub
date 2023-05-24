@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import swal from "sweetalert";
 import Footer from "../Nav/Footer";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/navStyle.css";
-import Login from "../Nav/Login";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 
@@ -210,7 +210,7 @@ function HomeConnect() {
 
   return (
     <div className="App">
-      <Login />
+      <NavBar />
       <div className="containerHome">
         <form onSubmit={postPosts}>
           <div className="bloc2">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Nav/Footer";
-import Login from "../Nav/Login";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/Profile.css";
 import swal from "sweetalert";
 
@@ -88,7 +88,7 @@ function Profile() {
 
   return (
     <div>
-      <Login />
+      <NavBar />
       <div className="home">
         {isEditing === false ? (
           <div className="container">

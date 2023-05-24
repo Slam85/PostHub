@@ -33,14 +33,15 @@ function NavBar() {
   const token = localStorage.getItem("token");
 
   return (
-    <nav className="navBar">
-      <div className="navBtn">
-        {token ? (
-          <>
-            <Link to="/home" className="btnHome">
-              Home
-            </Link>
+    <div className="navLogin">
+      <img src={"./posthub.png"} alt="logo" className="logoComplet" />
+      <nav className="navBar">
+        <div className="navButtons">
+          {token ? (
             <div className="connect">
+              <Link to="/home" className="btnHome">
+                Home
+              </Link>
               <Link to="/profile" className="btnProfile">
                 Profile
               </Link>
@@ -48,13 +49,11 @@ function NavBar() {
                 Sign Out
               </button>
             </div>
-          </>
-        ) : (
-          <>
-            <Link to="/" className="btnHome">
-              Home
-            </Link>
+          ) : (
             <div className="noConnect">
+              <Link to="/" className="btnHome">
+                Home
+              </Link>
               <Link to="/register" className="btnHome">
                 Create account
               </Link>
@@ -62,10 +61,10 @@ function NavBar() {
                 Sign In
               </Link>
             </div>
-          </>
-        )}
-      </div>
-    </nav>
+          )}
+        </div>
+      </nav>
+    </div>
   );
 }
 
