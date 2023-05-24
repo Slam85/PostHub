@@ -82,15 +82,7 @@ function Home() {
   return (
     <div className="App">
       <NavBar />
-      <div className="container">
-        <div>
-          <div className="form2">
-            <div action="" method="get" className="bloc1">
-              {renderMyPosts()}
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="container">{renderMyPosts()}</div>
       <div>
         <Footer />
       </div>
