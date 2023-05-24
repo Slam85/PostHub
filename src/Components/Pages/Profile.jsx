@@ -92,8 +92,8 @@ function Profile() {
       <div className="home">
         {isEditing === false ? (
           <div className="container">
-            <div className="containerInfo">
             <div action="" className="bloc1" method="get" />
+            <div className="containerInfo">
             <label htmlFor="">Last Name : </label>
             <div className="form1">{lastName}</div>
             <div action="" className="bloc1" method="get" />
@@ -102,12 +102,12 @@ function Profile() {
               <div className="form1">{firstName}</div>
             </div>
             <div action="" className="bloc1" method="get" />{" "}
+
             <div>
               <label htmlFor="">Bio: </label>
               <div className="form1">{bio}</div>
             </div>
-            </div>
-            <div className="containerEditInfo">
+
             <div action="" className="bloc1" method="get" />{" "}
             <button className="buttonToChangeValid" onClick={handleEditClick}>
               Change
