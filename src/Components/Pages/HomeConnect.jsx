@@ -171,8 +171,8 @@ function HomeConnect() {
                   ❤️
                 </button>{" "}
               </a>
-              <span>{item.likes.length}</span>
               <Tooltip anchorSelect=".my-anchor-element" />
+              <span>{item.likes.length}</span>
             </div>
             <form
               onSubmit={(e) => {
@@ -237,8 +237,8 @@ function HomeConnect() {
             </button>
           </div>
         </form>
-        <div>
-          <div action="" method="get">
+        <div className="form2">
+          <div action="" method="get" className="bloc1">
             {renderMyPosts()}
           </div>
         </div>
