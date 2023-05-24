@@ -183,20 +183,20 @@ function HomeConnect() {
               }}
             >
               <div className="commentsContainer">
-              <input className="inputComment"
-                type="text"
-                name="comment"
-                placeholder="Ajouter un commentaire"
-              />
-              <button className="commentBtn" type="submit">Comment</button>
+                <input className="inputComment"
+                  type="text"
+                  name="comment"
+                  placeholder="Ajouter un commentaire"
+                />
+                <button className="commentBtn" type="submit">Comment</button>
               </div>
             </form>
             <div className="displayComments">
-            {item.comments &&
-              item.comments.map((comment) => (
-                <p className="pComments" key={comment._id}>{comment.content}</p>
-              ))}
-              </div>
+              {item.comments &&
+                item.comments.map((comment) => (
+                  <p className="pComments" key={comment._id}>{comment.content}</p>
+                ))}
+            </div>
           </div>
         </div>
       );
