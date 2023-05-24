@@ -6,6 +6,7 @@ body {
   display: flex;
   position: fixed;
   flex-direction: row;
+  position: fixed;
   background-color: #852d33;
   justify-content: space-between;
   align-items: center;
@@ -32,12 +33,19 @@ body {
   align-items: center;
 }
 
+.buttonValiderLogin {
+  padding-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   width: 5rem;
   height: 2.5rem;
   background-color: rgba(255, 255, 255, 0.498);
   text-decoration: none;
-  color: white !important;
+  color: #852d33!important;
   border-radius: 4px;
   font-size: 1rem;
   border: none;
@@ -48,7 +56,7 @@ button {
 
 button:hover {
   background-color: #6110022c;
-  color: white;
+  color: white !important;
   font-weight: bolder;
 }
 
