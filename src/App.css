@@ -5,20 +5,20 @@ body {
   flex-direction: column;
   margin: 0;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    height:100vh;
-    display: flex;
-    flex-direction: column;
-    margin:0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 #root {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   min-width: 320px;
   display: flex;
-    background-color: #f1efef;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    min-width:320px;
+  background-color: #f1efef;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  min-width: 320px;
 }
 
 .App {
@@ -45,21 +45,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-    padding:1rem;
-    margin-left: 2rem;
-    justify-content: left;
-    width: 5rem;
-    height: 2.3rem;
-    background-color: rgba(255, 255, 255, 0.498);
-    text-decoration: none;
-    color:#611002!important;
-    border-radius:4px;
-    font-size: 1rem;
-    border: none;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 1rem;
+  margin-left: 2rem;
+  justify-content: left;
+  width: 5rem;
+  height: 2.3rem;
+  background-color: rgba(255, 255, 255, 0.498);
+  text-decoration: none;
+  color: #611002 !important;
+  border-radius: 4px;
+  font-size: 1rem;
+  border: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .posterButton:hover {
@@ -113,32 +113,32 @@ body {
   padding-bottom: 2rem;
   padding-right: 2rem;
   align-items: center;
-    border-radius: 4px;
-    border: none;
-    background-color: #eff1f0a9;
-    margin:1em;
-    height:20rem;
-    min-width: 40rem;
-    box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
-    color: #611002;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    /* text-align: left; */
-    padding-right: 1em;
-    font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #eff1f0a9;
+  margin: 1em;
+  height: 20rem;
+  min-width: 40rem;
+  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
+  color: #611002;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  /* text-align: left; */
+  padding-right: 1em;
+  font-size: 1rem;
 }
 
 .likes {
-    display: flex;
-    flex-direction: row;
-    justify-content:right;
-    font-size: 1rem;
-    text-align: center;
-    position:relative;
-    padding-bottom: 2rem;
-    padding-right: 2rem;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  align-items: center;
 }
 
 .buttonLike {
@@ -156,20 +156,20 @@ body {
 
 .buttonLike:hover {
   background-color: #eff1f000;
-    background-color: #eff1f000;
-    display: flex;
-    flex-direction: row;
-    justify-content:right;
-    width: 1em;
-    padding-bottom: 2rem;
-    padding-right: 2rem;
-    font-size: 1rem;
-    text-justify:inter-word;
-    position:relative;
+  background-color: #eff1f000;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  width: 1em;
+  padding-bottom: 2rem;
+  padding-right: 2rem;
+  font-size: 1rem;
+  text-justify: inter-word;
+  position: relative;
 }
 
-.buttonLike:hover{
-    background-color:#eff1f000;
+.buttonLike:hover {
+  background-color: #eff1f000;
 }
 
 .container {
@@ -180,11 +180,11 @@ body {
   flex-direction: column;
   width: 80vw;
   padding-right: 17vw;
-  padding-top:8vw;
+  padding-top: 8vw;
   box-sizing: content-box;
 }
 
-.containerLogin{
+.containerLogin {
   background: linear-gradient(to top, #6110026f, #f1efef);
   height: 100vh;
   margin: 0;
@@ -193,8 +193,8 @@ body {
   align-items: center;
   width: 100vw;
   padding-right: 17vw;
-  padding-top:8vw;
-    justify-content: space-evenly;
+  padding-top: 8vw;
+  justify-content: space-evenly;
 }
 
 .pageTitle {
@@ -241,38 +241,38 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content:flex-end;
+  justify-content: flex-end;
   align-content: flex-end;
   align-items: flex-end;
   box-sizing: content-box;
-  height:10%;
+  height: 10%;
 }
 
 .inputComment {
   display: flex;
   border-radius: 4px;
-  border:none;
-  color:#611002;
+  border: none;
+  color: #611002;
   margin: 1rem;
   box-sizing: content-box;
-  height:1.2vh;
+  height: 1.2vh;
   font-size: 0.8rem;
-  padding:0.8rem;
+  padding: 0.8rem;
 }
 
 .commentBtn {
   display: flex;
-  color:#611002 !important;
+  color: #611002 !important;
   margin: 1rem;
   box-sizing: content-box;
-  height:3vh;
+  height: 3vh;
   text-justify: center;
   font-size: 1rem;
 }
 
 .commentBtn:hover {
   display: flex;
-  color:white !important;
+  color: white !important;
   font-weight: bolder;
 }
 
@@ -295,7 +295,7 @@ body {
   margin-bottom: 2vh;
   box-sizing: content-box;
   width: 80%;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -307,7 +307,7 @@ body {
   margin-bottom: 0;
   box-sizing: content-box;
   width: 80%;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 }
 
@@ -318,7 +318,7 @@ body {
   padding: 1rem;
 }
 
-.pComments{
+.pComments {
   background-color: #88888815;
   border-radius: 4px;
   padding: 0.5rem;
@@ -330,7 +330,7 @@ body {
   width: 50%;
   justify-content: center;
   align-items: center;
-  margin-top:5em;
+  margin-top: 5em;
   margin-left: 1em;
   color: #611002;
 }
@@ -375,14 +375,15 @@ body {
   display: flex;
   flex-direction: column;
 }
-.titreBloc{
-    text-align: left;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.7rem;
-    padding-left: 0.5em;
-    margin-top:3rem;
+.titreBloc {
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 1.7rem;
+  padding-left: 0.5em;
+  margin-top: 3rem;
+}
 
-.containerInfo{
+.containerInfo {
   width: 40rem;
   height: 30rem;
   border: none;
@@ -400,10 +401,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding:1em;
+  padding: 1em;
 }
 
-label{
+.label {
   color: #852d33;
 }
 
@@ -413,5 +414,4 @@ label{
   align-items: center;
   margin-left: 0;
   margin-right: 0;
-
 }
