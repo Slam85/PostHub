@@ -171,8 +171,8 @@ function HomeConnect() {
                   ❤️
                 </button>{" "}
               </a>
-              <Tooltip anchorSelect=".my-anchor-element" />
               <span>{item.likes.length}</span>
+              <Tooltip anchorSelect=".my-anchor-element" />
             </div>
             <form
               onSubmit={(e) => {
@@ -183,18 +183,23 @@ function HomeConnect() {
               }}
             >
               <div className="commentsContainer">
-                <input className="inputComment"
+                <input
+                  className="inputComment"
                   type="text"
                   name="comment"
                   placeholder="Ajouter un commentaire"
                 />
-                <button className="commentBtn" type="submit">Comment</button>
+                <button className="commentBtn" type="submit">
+                  Comment
+                </button>
               </div>
             </form>
             <div className="displayComments">
               {item.comments &&
                 item.comments.map((comment) => (
-                  <p className="pComments" key={comment._id}>{comment.content}</p>
+                  <p className="pComments" key={comment._id}>
+                    {comment.content}
+                  </p>
                 ))}
             </div>
           </div>
@@ -206,7 +211,7 @@ function HomeConnect() {
   return (
     <div className="App">
       <Login />
-      <div className="container">
+      <div className="containerHome">
         <form onSubmit={postPosts}>
           <div className="bloc2">
             <div className="posts">
@@ -227,12 +232,13 @@ function HomeConnect() {
               />
             </div>
             <button type="submit" className="posterButton">
-              Submit
+              {" "}
+              Submit{" "}
             </button>
           </div>
         </form>
-        <div className="form2">
-          <div action="" method="get" className="bloc1">
+        <div>
+          <div action="" method="get">
             {renderMyPosts()}
           </div>
         </div>

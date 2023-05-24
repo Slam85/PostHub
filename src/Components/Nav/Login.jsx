@@ -21,7 +21,6 @@ function Login() {
 
   return (
     <div className="search">
-      {/* <img src={'./logo.png'} alt="logo" className="logo" /> */}
       <img src={"./posthub.png"} alt="logo" className="logoComplet" />
       <div></div>
 

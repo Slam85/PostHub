@@ -94,101 +94,90 @@ function Profile() {
           <div className="container">
             <div action="" className="bloc1" method="get" />
             <div className="containerInfo">
-            <label htmlFor="">Last Name : </label>
-            <div className="form1">{lastName}</div>
-            <div action="" className="bloc1" method="get" />
-            <div>
-              <label htmlFor="">First Name : </label>
-              <div className="form1">{firstName}</div>
-            </div>
-            <div action="" className="bloc1" method="get" />{" "}
-
-            <div>
-              <label htmlFor="">Bio: </label>
-              <div className="form1">{bio}</div>
-            </div>
-
-            <div action="" className="bloc1" method="get" />{" "}
-            <button className="buttonToChangeValid" onClick={handleEditClick}>
-              Change
-            </button>{" "}
+              <label htmlFor="">Last Name : </label>
+              <div className="form1">{lastName}</div>
+              <div action="" className="bloc1" method="get" />
+              <div>
+                <label htmlFor="">First Name : </label>
+                <div className="form1">{firstName}</div>
+              </div>
+              <div action="" className="bloc1" method="get" />{" "}
+              <div>
+                <label htmlFor="">Bio: </label>
+                <div className="form1">{bio}</div>
+              </div>
+              <div action="" className="bloc1" method="get" />{" "}
+              <button className="buttonToChangeValid" onClick={handleEditClick}>
+                Change
+              </button>{" "}
             </div>
           </div>
         ) : isEditing === true ? (
           <div className="container">
-            <div className="backprofils" >
-              <div className="username">
-                <div className="row">
-                  <div className="bloc1">
-                    <div action="" className="bloc1" method="get">
+            <div className="backprofils">
+              <div className="containerInfoEdit">
+                <div className="username">
+                  <div className="row">
+                    <div action="" method="get">
                       <label htmlFor="">Last Name : </label>
                       <input
                         type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
-                        className="form1"
+                        className="lastNameEdit"
                       />
                     </div>
-                  </div>
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
+                    <div action="" method="get">
                       <label htmlFor="">First Name : </label>
                       <input
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-                        className="form1"
+                        className="firstNameEdit"
                       />
                     </div>
                   </div>
-                </div>
-                <div className="row">
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
+                  <div className="row">
+                    <div action="" method="get">
                       {" "}
                       <label htmlFor="">E-mail : </label>
                       <input
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="form1"
+                        className="emailEdit"
                       />
                     </div>
-                  </div>
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
+                    <div action="" method="get">
                       {" "}
                       <label htmlFor="">Tel : </label>
                       <input
                         type="tel"
                         value={tel}
                         onChange={(e) => setTel(e.target.value)}
-                        className="form1"
+                        className="telEdit"
                       />
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="bloc1">
-                <div action="" method="get" className="bloc1">
+                <div action="" method="get">
                   {" "}
                   <label htmlFor="">Bio: </label>
                   <input
                     type="text"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
-                    className="form1"
+                    className="bioEdit"
                   />
                 </div>
+                <button
+                  className="buttonToChangeValid"
+                  onClick={handleEditClick}
+                >
+                  OK
+                </button>{" "}
               </div>
-              <button
-                className="buttonToChangeValid"
-                onClick={handleEditClick}
-              >
-                OK
-              </button>{" "}
             </div>
-
           </div>
         ) : (
           ""
