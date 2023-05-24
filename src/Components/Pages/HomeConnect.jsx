@@ -5,8 +5,7 @@ import "../Layouts/navStyle.css";
 import Login from "../Nav/Login";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
-import 'react-tooltip/dist/react-tooltip.css'
-import { Tooltip } from 'react-tooltip'
+
 
 function HomeConnect() {
   const [inputValue, setInputValue] = useState("");
