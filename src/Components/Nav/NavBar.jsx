@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../Layouts/NavBar.css";
 import swal from "sweetalert";
 
+
 function NavBar() {
   const navigate = useNavigate();
 
@@ -20,11 +21,14 @@ function NavBar() {
 
   const token = localStorage.getItem("token");
 
+
+
   return (
     <nav className="navBar">
       <div className="navBtn">
         {token ? (
           <>
+
             {/* <button className="btnHome"> */}
             <Link to="/home" className="btnHome">
               Home
@@ -41,6 +45,7 @@ function NavBar() {
           </>
         ) : (
           <>
+
             {/* <button className="btn"> */}
             <Link to="/" className="btn">
               Home
