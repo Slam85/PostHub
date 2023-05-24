@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../Nav/Footer"; 
+import Footer from "../Nav/Footer";
 import "../Layouts/navStyle.css";
 import Login from "../Nav/Login";
 import swal from "sweetalert";
@@ -49,7 +49,6 @@ function Home() {
                 </button>{" "}
                 <span>{item.likes.length}</span>
               </div>
-            </div>
             </div>
           </div>
         );
