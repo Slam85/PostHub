@@ -57,15 +57,12 @@ function Connection() {
       <div className="containerMillieu">
         <div className="containerLogin">
           <div  className="displayLogin">
-          <div className="blocLogin">
             <label htmlFor="" className="textLogin">E-mail</label>
-
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="inputEmailLogin"
             ></input>
-          </div>
           <div className="bloc1">
             <label htmlFor=""className="textLogin">Password</label>
             <input
@@ -74,9 +71,9 @@ function Connection() {
               onChange={(e) => setPassword(e.target.value)}
               className="inputPasswordLogin"
             ></input>
-          </div>
           <div>
             <button className="btnValiderLogin" onClick={handleSubmit}>Log in</button>
+            </div>
             </div>
           </div>
         </div>

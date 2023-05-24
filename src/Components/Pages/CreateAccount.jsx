@@ -49,18 +49,16 @@ function CreateAccount() {
       <div className="bodyAccount">
         <div className="container">
           <div className="divCreate">
-          <form action="" className="mx-auto" method="post">
-            <div className="bloc1">
+          <form action="" method="post">
               <label className="labelCreate" htmlFor="">First Name</label>
               <input
                 type="text"
-                className="inputLastNameCreate"
+                className="inputFirstNameCreate"
                 id="Nom"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
-            </div>
-            <div className="bloc1">
+            <div>
               <label className="labelCreate" htmlFor="">Last Name</label>
               <input
                 type="text"
@@ -69,8 +67,7 @@ function CreateAccount() {
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
-            </div>
-            <div className="bloc1">
+            </div>            
               <label className="labelCreate" htmlFor="">E-mail</label>
               <input
                 type="email"
@@ -79,8 +76,7 @@ function CreateAccount() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </div>
-            <div className="bloc1">
+            <div>
               <label className="labelCreate" htmlFor="">Password</label>
               <input
                 type="password"

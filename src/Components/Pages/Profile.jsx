@@ -117,70 +117,61 @@ function Profile() {
         ) : isEditing === true ? (
           <div className="container">
             <div className="backprofils" >
+            <div className="containerInfoEdit">
               <div className="username">
                 <div className="row">
-                  <div className="bloc1">
-                    <div action="" className="bloc1" method="get">
+                    <div action="" method="get">
                       <label htmlFor="">Last Name : </label>
                       <input
                         type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
-                        className="form1"
+                        className="lastNameEdit"
                       />
                     </div>
-                  </div>
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
+                    <div action="" method="get">
                       <label htmlFor="">First Name : </label>
                       <input
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-                        className="form1"
+                        className="firstNameEdit"
                       />
                     </div>
-                  </div>
                 </div>
                 <div className="row">
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
+                    <div action="" method="get">
                       {" "}
                       <label htmlFor="">E-mail : </label>
                       <input
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="form1"
+                        className="emailEdit"
                       />
                     </div>
-                  </div>
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
+                    <div action="" method="get">
                       {" "}
                       <label htmlFor="">Tel : </label>
                       <input
                         type="tel"
                         value={tel}
                         onChange={(e) => setTel(e.target.value)}
-                        className="form1"
+                        className="telEdit"
                       />
                     </div>
-                  </div>
                 </div>
               </div>
-              <div className="bloc1">
-                <div action="" method="get" className="bloc1">
+                <div action="" method="get">
                   {" "}
                   <label htmlFor="">Bio: </label>
                   <input
                     type="text"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
-                    className="form1"
-                  />
+                    className="bioEdit"/>
                 </div>
-              </div>
+              
               <button
                 className="buttonToChangeValid"
                 onClick={handleEditClick}
@@ -188,7 +179,7 @@ function Profile() {
                 OK
               </button>{" "}
             </div>
-
+            </div>
           </div>
         ) : (
           ""
