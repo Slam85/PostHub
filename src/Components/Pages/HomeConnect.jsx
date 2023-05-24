@@ -6,6 +6,7 @@ import Login from "../Nav/Login";
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
 
+
 function HomeConnect() {
   const [inputValue, setInputValue] = useState("");
   const [inputTitle, setInputTitle] = useState("");
@@ -183,20 +184,20 @@ function HomeConnect() {
               }}
             >
               <div className="commentsContainer">
-              <input className="inputComment"
-                type="text"
-                name="comment"
-                placeholder="Ajouter un commentaire"
-              />
-              <button className="commentBtn" type="submit">Comment</button>
+                <input className="inputComment"
+                  type="text"
+                  name="comment"
+                  placeholder="Ajouter un commentaire"
+                />
+                <button className="commentBtn" type="submit">Comment</button>
               </div>
             </form>
             <div className="displayComments">
-            {item.comments &&
-              item.comments.map((comment) => (
-                <p className="pComments" key={comment._id}>{comment.content}</p>
-              ))}
-              </div>
+              {item.comments &&
+                item.comments.map((comment) => (
+                  <p className="pComments" key={comment._id}>{comment.content}</p>
+                ))}
+            </div>
           </div>
         </div>
       );
