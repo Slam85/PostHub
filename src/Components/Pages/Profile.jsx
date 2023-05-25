@@ -141,7 +141,7 @@ function Profile() {
                       />
                     </div>
                     <div action="" method="get">
-                      <label htmlFor="">Age : </label>
+                      <label htmlFor="">Tel : </label>
                       <input
                         type="number"
                         value={age}
@@ -150,12 +150,12 @@ function Profile() {
                       />
                     </div>
                     <div action="" method="get">
-                      <label htmlFor="">Occupation : </label>
+                      <label htmlFor="">Biography : </label>
                       <input
                         type="text"
                         value={occupation}
                         onChange={(e) => setOccupation(e.target.value)}
-                        className="emailEdit"
+                        className="bioEdit"
                       />
                     </div>
                   </div>
