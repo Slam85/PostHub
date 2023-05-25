@@ -254,7 +254,8 @@ body {
 .pComments {
   background-color: #88888815;
   border-radius: 4px;
-  padding: 0.5rem;
+  padding: 1rem;
+  margin: 1em;
 }
 
 .displayLogin {
