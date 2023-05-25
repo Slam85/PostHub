@@ -70,13 +70,10 @@ button:hover {
   color: white;
 }
 
-<<<<<<< HEAD
-=======
 .contenuBloc {
   margin-left: 2%;
 }
 
->>>>>>> 7bedf8dc62b5aeceaab5dbbb82c260bec31bf336
 body::-webkit-scrollbar {
   width: 0;
 }
