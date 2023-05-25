@@ -495,3 +495,16 @@ label {
 .containerHome {
   margin-right: 8vh;
 }
+
+.containerApp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #6110026f, #f1efef);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 8vw;
+  padding-bottom: 2vw;
+}

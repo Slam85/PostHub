@@ -82,7 +82,7 @@ function Home() {
   return (
     <div className="App">
       <NavBar />
-      <div className="container">{renderMyPosts()}</div>
+      <div className="containerApp">{renderMyPosts()}</div>
       <div></div>
       <Footer />
     </div>
