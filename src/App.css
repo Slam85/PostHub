@@ -193,9 +193,10 @@ body {
   color: #611002 !important;
   margin: 1rem;
   box-sizing: content-box;
-  height: 3vh;
+  height: 8%;
   text-justify: center;
   font-size: 1rem;
+  text-align: center;
 }
 
 .commentBtn:hover {
