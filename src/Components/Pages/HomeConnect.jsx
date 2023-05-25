@@ -211,8 +211,9 @@ function HomeConnect() {
 
   return (
     <>
+      <NavBar />
       <div className="App">
-        <NavBar />
+
         <div className="containerHome">
           <form className="formCreate" onSubmit={postPosts}>
             <input
