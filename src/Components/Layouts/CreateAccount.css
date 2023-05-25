@@ -29,7 +29,7 @@
   margin-left: -1em;
 }
 
-.container {
+/* .container {
   align-items: center;
   height: 100vh;
   width: cover;
@@ -40,7 +40,7 @@
   padding-top: 0;
   padding-bottom: 0;
   color: #333332;
-}
+} */
 
 .labelCreate {
   color: #852d33;
@@ -159,7 +159,7 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   background-color: #eff1f04c;
   border-radius: 4px;
-  margin-top: 1em;
+  margin-top: 10em;
   margin-left: 10em;
   margin-bottom: 5em;
   box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
@@ -171,6 +171,14 @@
   align-items: center;
   padding: 2em;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
 .createPost {
   width: 100%;
   height: 10rem;
@@ -226,9 +234,9 @@
 
 .bodyAccount {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
 }
 
 .containerTitle {
@@ -279,6 +287,7 @@
   display: flex;
   flex-direction: column;
   align-items: left;
+  font-size: 1.2rem;
 }
 
 .inputEmailCreate {
@@ -300,9 +309,6 @@
   align-items: left;
 }
 
-.inputPasswordCreate {
-  font-size: 1.2rem;
-}
 .inputPasswordCreate {
   width: 30vw;
   height: 2rem;
@@ -410,7 +416,7 @@
   background-color: #eff1f04c;
   border-radius: 4px;
   margin-top: 1em;
-  margin-left: 10em;
+  margin-right: 10em;
   margin-bottom: 5em;
   box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
   text-align: center;
@@ -420,16 +426,4 @@
   justify-content: center;
   align-items: center;
   padding: 2em;
-}
-
-.divCreate {
-  height: 65vh;
-  width: 50vw;
-  padding: 1em;
-  margin-left: 15em;
-  margin-top: 8em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
