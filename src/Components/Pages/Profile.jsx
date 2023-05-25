@@ -8,8 +8,8 @@ function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [tel, setTel] = useState("");
-  const [bio, setBio] = useState("");
+  const [age, setAge] = useState("");
+  const [occupation, setOccupation] = useState("");
 
   const [isEditing, setIsEditing] = useState(false);
 
@@ -31,8 +31,8 @@ function Profile() {
     setFirstName(data.firstname);
     setLastName(data.lastname);
     setEmail(data.email);
-    setBio(data.bio);
-    setTel(data.tel);
+    setAge(data.age);
+    setOccupation(data.occupation);
 
     console.log(data);
   }
@@ -52,8 +52,8 @@ function Profile() {
         firstname: firstName,
         lastname: lastName,
         email: email,
-        bio: bio,
-        tel: tel,
+        age: age,
+        occupation: occupation,
       }),
     };
 
@@ -79,8 +79,8 @@ function Profile() {
       setFirstName(user.firstName);
       setLastName(user.lastName);
       setEmail(user.email);
-      setBio(user.bio);
-      setTel(user.tel);
+      setAge(user.age);
+      setOccupation(user.occupation);
     } else {
       getInfoProfil();
     }
@@ -100,11 +100,6 @@ function Profile() {
               <div>
                 <label htmlFor="">First Name : </label>
                 <div className="form1">{firstName}</div>
-              </div>
-              <div action="" className="bloc1" method="get" />{" "}
-              <div>
-                <label htmlFor="">Bio: </label>
-                <div className="form1">{bio}</div>
               </div>
               <div action="" className="bloc1" method="get" />{" "}
               <button className="buttonToChangeValid" onClick={handleEditClick}>
@@ -136,10 +131,7 @@ function Profile() {
                         className="firstNameEdit"
                       />
                     </div>
-                  </div>
-                  <div className="row">
                     <div action="" method="get">
-                      {" "}
                       <label htmlFor="">E-mail : </label>
                       <input
                         type="text"
@@ -149,26 +141,24 @@ function Profile() {
                       />
                     </div>
                     <div action="" method="get">
-                      {" "}
-                      <label htmlFor="">Tel : </label>
+                      <label htmlFor="">Age : </label>
                       <input
-                        type="tel"
-                        value={tel}
-                        onChange={(e) => setTel(e.target.value)}
-                        className="telEdit"
+                        type="number"
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
+                        className="emailEdit"
+                      />
+                    </div>
+                    <div action="" method="get">
+                      <label htmlFor="">Occupation : </label>
+                      <input
+                        type="text"
+                        value={occupation}
+                        onChange={(e) => setOccupation(e.target.value)}
+                        className="emailEdit"
                       />
                     </div>
                   </div>
-                </div>
-                <div action="" method="get">
-                  {" "}
-                  <label htmlFor="">Bio: </label>
-                  <input
-                    type="text"
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}
-                    className="bioEdit"
-                  />
                 </div>
                 <button
                   className="buttonToChangeValid"

@@ -10,8 +10,6 @@ function CreateAccount() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [tel, setTel] = useState("");
-  const [bio, setBio] = useState("");
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -27,8 +25,6 @@ function CreateAccount() {
         password: password,
         firstname: firstName,
         lastname: lastName,
-        bio: bio,
-        tel: tel,
       }),
     };
     console.log("option", options);
@@ -74,30 +70,6 @@ function CreateAccount() {
                   id="Prenom"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="labelCreate" htmlFor="">
-                  Tel
-                </label>
-                <input
-                  type="text"
-                  className="inputLastNameCreate"
-                  id="Prenom"
-                  value={tel}
-                  onChange={(e) => setTel(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="labelCreate" htmlFor="">
-                  Bio
-                </label>
-                <input
-                  type="text"
-                  className="inputLastNameCreate"
-                  id="Prenom"
-                  value={bio}
-                  onChange={(e) => setBio(e.target.value)}
                 />
               </div>
               <label className="labelCreate" htmlFor="">
