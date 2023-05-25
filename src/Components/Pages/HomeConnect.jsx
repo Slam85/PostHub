@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import swal from "sweetalert";
 import Footer from "../Nav/Footer";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/navStyle.css";
-import Login from "../Nav/Login";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
 function HomeConnect() {
   const [inputValue, setInputValue] = useState("");
@@ -152,42 +154,55 @@ function HomeConnect() {
   const renderMyPosts = () => {
     return allPosts.map((item) => {
       return (
-        <div key={item._id}>
+        <div className="divHomeContainer" key={item._id}>
           <div className="homeContainer">
             <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
             <p className="author">
-            {item.firstname} {item.lastname}
+              By: {item.firstname} {item.lastname}
             </p>
             <div className="likes">
-              <button className="buttonLike" onClick={() => like(item._id)}>
-                ❤️
-              </button>{" "}
+              <a
+                className="my-anchor-element"
+                data-tooltip-content="J'aime"
+                data-tooltip-place="bottom"
+              >
+                <button className="buttonLike" onClick={() => like(item._id)}>
+                  ♥︎
+                </button>{" "}
+              </a>
+              <Tooltip anchorSelect=".my-anchor-element" />
               <span>{item.likes.length}</span>
             </div>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const commentText = e.target.comment.value;
-                addComment(item._id, commentText);
-                e.target.reset();
-              }}
-            >
-              <div className="commentsContainer">
-              <input className="inputComment"
-                type="text"
-                name="comment"
-                placeholder="Ajouter un commentaire"
-              />
-              <button className="commentBtn" type="submit">Commenter</button>
-              </div>
-            </form>
+            <div className="comments">
+              <form
+                className="commentsContainer"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const commentText = e.target.comment.value;
+                  addComment(item._id, commentText);
+                  e.target.reset();
+                }}
+              >
+                <input
+                  className="inputComment"
+                  type="text"
+                  name="comment"
+                  placeholder="Ajouter un commentaire"
+                />
+                <button className="commentBtn" type="submit">
+                  Comment
+                </button>
+              </form>
+            </div>
             <div className="displayComments">
-            {item.comments &&
-              item.comments.map((comment) => (
-                <p className="pComments" key={comment._id}>{comment.content}</p>
-              ))}
-              </div>
+              {item.comments &&
+                item.comments.map((comment) => (
+                  <div className="pComments" key={comment._id}>
+                    {comment.content}
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       );
@@ -195,19 +210,19 @@ function HomeConnect() {
   };
 
   return (
-    <div className="App">
-      <Login />
-      <div className="container">
-        <form onSubmit={postPosts}>
-          <div className="bloc2">
-            <div className="posts">
-              <input
-                type="text"
-                value={inputTitle}
-                onChange={handleInputChange2}
-                placeholder="Post Title"
-                className="form1"
-              />
+    <>
+      <NavBar />
+      <div className="App">
+        <div className="containerHome2">
+          <form className="formCreate" onSubmit={postPosts}>
+            <input
+              type="text"
+              value={inputTitle}
+              onChange={handleInputChange2}
+              placeholder="Post Title"
+              className="form1"
+            />
+            <div className="textComment">
               <input
                 type="text"
                 rows="5"
@@ -216,20 +231,16 @@ function HomeConnect() {
                 placeholder="Post Text"
                 className="createPost"
               />
+              <button type="submit" className="posterButton">
+                Submit
+              </button>
             </div>
-            <button type="submit" className="posterButton">
-              Submit
-            </button>
-          </div>
-        </form>
-        <div className="form2">
-          <div action="" method="get" className="bloc1">
-            {renderMyPosts()}
-          </div>
+          </form>
         </div>
+        {renderMyPosts()}
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

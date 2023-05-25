@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Nav/Footer";
-import Login from "../Nav/Login";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/CreateAccount.css";
 import swal from "sweetalert";
 
@@ -45,55 +45,62 @@ function CreateAccount() {
 
   return (
     <div>
-      <Login />
+      <NavBar />
       <div className="bodyAccount">
         <div className="container">
-          <h1 className="containerTitle">Create Account</h1>
-          <form action="" className="mx-auto" method="post">
-            <div className="bloc1">
-              <label htmlFor="">Lastname</label>
+          <div className="divCreate">
+            <form action="" method="post">
+              <label className="labelCreate" htmlFor="">
+                First Name
+              </label>
               <input
                 type="text"
-                className="form1"
+                className="inputFirstNameCreate"
                 id="Nom"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
-            </div>
-            <div className="bloc1">
-              <label htmlFor="">Firstname</label>
+
+              <label className="labelCreate" htmlFor="">
+                Last Name
+              </label>
               <input
                 type="text"
-                className="form1"
+                className="inputLastNameCreate"
                 id="Prenom"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
               />
-            </div>
-            <div className="bloc1">
-              <label htmlFor="">E-mail</label>
+
+              <label className="labelCreate" htmlFor="">
+                E-mail
+              </label>
               <input
                 type="email"
-                className="form1"
+                className="inputEmailCreate"
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-            </div>
-            <div className="bloc1">
-              <label htmlFor="">Password</label>
+
+              <label className="labelCreate" htmlFor="">
+                Password
+              </label>
               <input
                 type="password"
-                className="form1"
+                className="inputPasswordCreate"
                 id="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </div>
-            <button className="buttonInscription" onClick={handleSubmit}>
-              Create Account
-            </button>
-          </form>
+
+              <div className="divButtonCreate">
+                <button className="buttonInscription" onClick={handleSubmit}>
+                  Create Account
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
       <Footer />

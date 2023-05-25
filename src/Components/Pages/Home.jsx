@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../Nav/Footer";
+import NavBar from "../Nav/NavBar";
 import "../Layouts/navStyle.css";
-import Login from "../Nav/Login";
 import swal from "sweetalert";
 
 function Home() {
@@ -37,7 +37,7 @@ function Home() {
 
   const renderMyPosts = () => {
     if (allPosts.length >= 0) {
-      return allPosts.map((item, index) => {
+      return allPosts.slice(0, 4).map((item, index) => {
         return (
           <div key={index}>
             <div className="homeContainer">
@@ -45,7 +45,7 @@ function Home() {
               <p className="contenuBloc">{item.content}</p>
               <div className="likes">
                 <button className="buttonLike" onClick={() => like(item._id)}>
-                  ❤️
+                  ♥︎
                 </button>{" "}
                 <span>{item.likes.length}</span>
               </div>
@@ -81,19 +81,10 @@ function Home() {
 
   return (
     <div className="App">
-      <Login />
-      <div className="container">
-        <div>
-          <div className="form2">
-            <div action="" method="get" className="bloc1">
-              {renderMyPosts()}
-            </div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <Footer />
-      </div>
+      <NavBar />
+      <div className="containerApp">{renderMyPosts()}</div>
+      <div></div>
+      <Footer />
     </div>
   );
 }

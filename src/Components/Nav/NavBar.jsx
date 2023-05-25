@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../Layouts/NavBar.css";
+import Swal from "sweetalert2";
 import swal from "sweetalert";
 
 
@@ -15,7 +16,18 @@ function NavBar() {
       localStorage.removeItem("password");
       navigate("/");
     } else {
-      swal("Signed In");
+      Swal.fire({
+        title: "Great!! You continue with us!!",
+        width: 600,
+        padding: "3em",
+        background: "#fff ",
+        backdrop: `
+          rgba(197, 202, 201, 0.45)
+          url("https://sweetalert2.github.io/images/nyan-cat.gif")
+          left top
+          no-repeat
+        `,
+      });
     }
   };
 
@@ -24,49 +36,39 @@ function NavBar() {
 
 
   return (
-    <nav className="navBar">
-      <div className="navBtn">
-        {token ? (
-          <>
+    <div className="navLogin">
+      <img src={"./posthub.png"} alt="logo" className="logoComplet" />
+      <nav className="navBar">
+        <div className="navButtons">
+          {token ? (
 
-            {/* <button className="btnHome"> */}
-            <Link to="/home" className="btnHome">
-              Home
-            </Link>
-            {/* </button> */}
             <div className="connect">
-              {/* <button className="btn"> */}
+              <Link to="/home" className="btnHome">
+                Home
+              </Link>
               <Link to="/profile" className="btnProfile">
                 Profile
               </Link>
-              {/* </button> */}
-              <button onClick={handleSubmit} className="btnProfile">Sign Out</button>
+              <button className="btnSignOut" onClick={handleSubmit}>
+                Sign Out
+              </button>
             </div>
-          </>
-        ) : (
-          <>
-
-            {/* <button className="btn"> */}
-            <Link to="/" className="btn">
-              Home
-            </Link>
-            {/* </button> */}
+          ) : (
             <div className="noConnect">
-              {/* <button className="btn"> */}
-              <Link to="/register" className="btn">
+              <Link to="/" className="btnHome">
+                Home
+              </Link>
+              <Link to="/register" className="btnHome">
                 Create account
               </Link>
-              {/* </button> */}
-              {/* <button className="btn"> */}
-              <Link to="/connection" className="btn">
+              <Link to="/connection" className="btnHome">
                 Sign In
               </Link>
-              {/* </button> */}
             </div>
-          </>
-        )}
-      </div>
-    </nav>
+          )}
+        </div>
+      </nav>
+    </div>
   );
 }
 
