@@ -100,7 +100,6 @@ body {
   padding-right: 1rem;
   font-size: 1rem;
   text-justify: inter-word;
-
 }
 
 .buttonLike:hover {
@@ -118,13 +117,12 @@ body {
 
 .containerLogin {
   background: linear-gradient(to top, #6110026f, #f1efef);
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  padding-right: 17vw;
   padding-top: 8vw;
 }
 

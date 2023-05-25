@@ -3,11 +3,11 @@
   margin-left: 2vh;
 }
 
-input {
+/* input {
   border-color: #333332;
   padding-top: 1vh;
   padding-bottom: 1vh;
-}
+} */
 
 .posts {
   display: flex;
@@ -73,6 +73,7 @@ button:hover {
 .contenuBloc {
   margin-left: 2%;
 }
+
 body::-webkit-scrollbar {
   width: 0;
 }
