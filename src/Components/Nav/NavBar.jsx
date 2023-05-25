@@ -37,7 +37,7 @@ function NavBar() {
 
   return (
     <div className="navLogin">
-      <img src={"./posthub.png"} alt="logo" className="logoComplet" />
+      <img src={"./posthub2.webp"} alt="logo" className="logoComplet" />
       <nav className="navBar">
         <div className="navButtons">
           {token ? (

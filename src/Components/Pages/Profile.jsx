@@ -8,13 +8,8 @@ function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-<<<<<<< HEAD
-  const [tel, setTel] = useState("");
-  const [bio, setBio] = useState("");
-=======
   const [age, setAge] = useState("");
   const [occupation, setOccupation] = useState("");
->>>>>>> main
 
   const [isEditing, setIsEditing] = useState(false);
 
@@ -36,13 +31,8 @@ function Profile() {
     setFirstName(data.firstname);
     setLastName(data.lastname);
     setEmail(data.email);
-<<<<<<< HEAD
-    setBio(data.bio);
-    setTel(data.tel);
-=======
     setAge(data.age);
     setOccupation(data.occupation);
->>>>>>> main
 
     console.log(data);
   }
@@ -62,13 +52,8 @@ function Profile() {
         firstname: firstName,
         lastname: lastName,
         email: email,
-<<<<<<< HEAD
-        bio: bio,
-        tel: tel,
-=======
         age: age,
         occupation: occupation,
->>>>>>> main
       }),
     };
 
@@ -94,13 +79,8 @@ function Profile() {
       setFirstName(user.firstName);
       setLastName(user.lastName);
       setEmail(user.email);
-<<<<<<< HEAD
-      setBio(user.bio);
-      setTel(user.tel);
-=======
       setAge(user.age);
       setOccupation(user.occupation);
->>>>>>> main
     } else {
       getInfoProfil();
     }
@@ -126,29 +106,6 @@ function Profile() {
                 Change
               </button>{" "}
             </div>
-<<<<<<< HEAD
-            <div action="" className="bloc1" method="get" />{" "}
-
-            <div>
-              <label htmlFor="">Bio: </label>
-              <div className="form1">{bio}</div>
-            </div>
-
-            <div action="" className="bloc1" method="get" />{" "}
-            <button className="buttonToChangeValid" onClick={handleEditClick}>
-              Change
-            </button>{" "}
-          </div>
-        ) : isEditing === true ? (
-          <div className="container">
-            <div className="backprofils" >
-              <h1 className="pageTitle">Profile</h1>
-              <div className="username">
-                <div className="row">
-                  <div className="bloc1">
-                    <div action="" className="bloc1" method="get">
-                      <label htmlFor="">Lastname : </label>
-=======
           </div>
         ) : isEditing === true ? (
           <div className="container2">
@@ -158,81 +115,28 @@ function Profile() {
                   <div className="row">
                     <div action="" method="get">
                       <label htmlFor="">Last Name : </label>
->>>>>>> main
                       <input
                         type="text"
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
-<<<<<<< HEAD
-                        className="form1"
-                      />
-                    </div>
-                  </div>
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
-                      <label htmlFor="">Firstname : </label>
-=======
                         className="lastNameEdit"
                       />
                     </div>
                     <div action="" method="get">
                       <label htmlFor="">First Name : </label>
->>>>>>> main
                       <input
                         type="text"
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
-<<<<<<< HEAD
-                        className="form1"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
-                      {" "}
-=======
                         className="firstNameEdit"
                       />
                     </div>
                     <div action="" method="get">
->>>>>>> main
                       <label htmlFor="">E-mail : </label>
                       <input
                         type="text"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-<<<<<<< HEAD
-                        className="form1"
-                      />
-                    </div>
-                  </div>
-                  <div className="bloc1">
-                    <div action="" method="get" className="bloc1">
-                      {" "}
-                      <label htmlFor="">Tel : </label>
-                      <input
-                        type="tel"
-                        value={tel}
-                        onChange={(e) => setTel(e.target.value)}
-                        className="form1"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="bloc1">
-                <div action="" method="get" className="bloc1">
-                  {" "}
-                  <label htmlFor="">Bio: </label>
-                  <input
-                    type="text"
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}
-                    className="form1"
-                  />
-=======
                         className="emailEdit"
                       />
                     </div>
@@ -255,7 +159,6 @@ function Profile() {
                       />
                     </div>
                   </div>
->>>>>>> main
                 </div>
               </div>
               <button
