@@ -143,9 +143,10 @@ body {
   display: flex;
   box-sizing: content-box;
   width: 80%;
-  height: 60%;
+  height: 100%;
   flex-direction: row;
-  overflow-y: scroll;
+  overflow-y: visible;
+  margin-bottom: 0;
 }
 
 .contenuBloc::-webkit-scrollbar {
