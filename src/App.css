@@ -95,9 +95,9 @@ body {
   flex-direction: row;
   justify-content: right;
   width: 1em;
-  padding-top: 1.1rem;
+  padding-top: 0.3rem;
   padding-right: 1rem;
-  font-size: 1rem;
+  font-size: 1.8rem;
   text-justify: inter-word;
 }
 

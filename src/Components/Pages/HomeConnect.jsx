@@ -168,7 +168,7 @@ function HomeConnect() {
                 data-tooltip-place="bottom"
               >
                 <button className="buttonLike" onClick={() => like(item._id)}>
-                  ❤️
+                  ♥︎
                 </button>{" "}
               </a>
               <Tooltip anchorSelect=".my-anchor-element" />
