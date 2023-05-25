@@ -45,7 +45,7 @@ function Home() {
               <p className="contenuBloc">{item.content}</p>
               <div className="likes">
                 <button className="buttonLike" onClick={() => like(item._id)}>
-                  ❤️
+                  ♥︎
                 </button>{" "}
                 <span>{item.likes.length}</span>
               </div>
