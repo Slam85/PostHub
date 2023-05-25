@@ -20,11 +20,11 @@ body {
 }
 
 .posterButton {
-  padding: 1rem;
-  margin-left: 2rem;
-  margin-top: 10em;
-  width: 5rem;
-  height: 2.3rem;
+  padding: 1%;
+  margin-left: 2vw;
+  margin-top: 22vh;
+  width: 10vw;
+  height: 5vh;
   background-color: rgba(255, 255, 255, 0.498);
   text-decoration: none;
   color: #611002 !important;
@@ -95,7 +95,7 @@ body {
   flex-direction: row;
   justify-content: right;
   width: 1vw;
-  padding-top: 0vh;
+  padding-top: 0;
   padding-right: 1vw;
   font-size: 1.8rem;
   text-justify: inter-word;
