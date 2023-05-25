@@ -154,7 +154,7 @@ function HomeConnect() {
   const renderMyPosts = () => {
     return allPosts.map((item) => {
       return (
-        <div key={item._id}>
+        <div className="divHomeContainer" key={item._id}>
           <div className="homeContainer">
             <p className="titreBloc">{item.title}</p>
             <p className="contenuBloc">{item.content}</p>
@@ -174,15 +174,16 @@ function HomeConnect() {
               <Tooltip anchorSelect=".my-anchor-element" />
               <span>{item.likes.length}</span>
             </div>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const commentText = e.target.comment.value;
-                addComment(item._id, commentText);
-                e.target.reset();
-              }}
-            >
-              <div className="commentsContainer">
+            <div className="comments">
+              <form
+                className="commentsContainer"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  const commentText = e.target.comment.value;
+                  addComment(item._id, commentText);
+                  e.target.reset();
+                }}
+              >
                 <input
                   className="inputComment"
                   type="text"
@@ -192,14 +193,14 @@ function HomeConnect() {
                 <button className="commentBtn" type="submit">
                   Comment
                 </button>
-              </div>
-            </form>
+              </form>
+            </div>
             <div className="displayComments">
               {item.comments &&
                 item.comments.map((comment) => (
-                  <p className="pComments" key={comment._id}>
+                  <div className="pComments" key={comment._id}>
                     {comment.content}
-                  </p>
+                  </div>
                 ))}
             </div>
           </div>
@@ -209,19 +210,19 @@ function HomeConnect() {
   };
 
   return (
-    <div className="App">
-      <NavBar />
-      <div className="containerHome">
-        <form onSubmit={postPosts}>
-          <div className="bloc2">
-            <div className="posts">
-              <input
-                type="text"
-                value={inputTitle}
-                onChange={handleInputChange2}
-                placeholder="Post Title"
-                className="form1"
-              />
+    <>
+      <div className="App">
+        <NavBar />
+        <div className="containerHome">
+          <form className="formCreate" onSubmit={postPosts}>
+            <input
+              type="text"
+              value={inputTitle}
+              onChange={handleInputChange2}
+              placeholder="Post Title"
+              className="form1"
+            />
+            <div className="textComment">
               <input
                 type="text"
                 rows="5"
@@ -230,21 +231,16 @@ function HomeConnect() {
                 placeholder="Post Text"
                 className="createPost"
               />
+              <button type="submit" className="posterButton">
+                Submit
+              </button>
             </div>
-            <button type="submit" className="posterButton">
-              {" "}
-              Submit{" "}
-            </button>
-          </div>
-        </form>
-        <div className="form2">
-          <div action="" method="get" className="bloc1">
-            {renderMyPosts()}
-          </div>
+          </form>
         </div>
+        {renderMyPosts()}
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

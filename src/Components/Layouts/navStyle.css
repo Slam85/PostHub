@@ -9,11 +9,6 @@ input {
   padding-bottom: 1vh;
 }
 
-a:-webkit-any-link {
-  text-decoration: none;
-  color: #333332;
-}
-
 .posts {
   display: flex;
   flex-direction: column;

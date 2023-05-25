@@ -83,9 +83,8 @@ function Home() {
     <div className="App">
       <NavBar />
       <div className="container">{renderMyPosts()}</div>
-      <div>
-        <Footer />
-      </div>
+      <div></div>
+      <Footer />
     </div>
   );
 }
