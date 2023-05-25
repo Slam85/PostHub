@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../Nav/Footer";
+import NavBar from "./NavBar";
 import "../Layouts/navStyle.css";
 import "../Layouts/Error.css";
 
