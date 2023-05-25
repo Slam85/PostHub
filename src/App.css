@@ -95,7 +95,7 @@ body {
   flex-direction: row;
   justify-content: right;
   width: 1vw;
-  padding-top: 0;
+  padding-top: 0vh;
   padding-right: 1vw;
   font-size: 1.8rem;
   text-justify: inter-word;
