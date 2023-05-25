@@ -1,12 +1,12 @@
 body {
   background: linear-gradient(to top, #6110026f, #f1efef);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  display: flex;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding: 0;
 }
 
 #root {
@@ -111,7 +111,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 94%;
   margin-bottom: 2rem;
 }
 
