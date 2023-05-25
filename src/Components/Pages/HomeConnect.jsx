@@ -164,8 +164,8 @@ function HomeConnect() {
             <div className="likes">
               <a
                 className="my-anchor-element"
-                data-tooltip-content="Like"
-                data-tooltip-place="left"
+                data-tooltip-content="J'aime"
+                data-tooltip-place="bottom"
               >
                 <button className="buttonLike" onClick={() => like(item._id)}>
                   ❤️
