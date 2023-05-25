@@ -60,18 +60,18 @@ function CreateAccount() {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
               />
-              <div>
-                <label className="labelCreate" htmlFor="">
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  className="inputLastNameCreate"
-                  id="Prenom"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                />
-              </div>
+
+              <label className="labelCreate" htmlFor="">
+                Last Name
+              </label>
+              <input
+                type="text"
+                className="inputLastNameCreate"
+                id="Prenom"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+
               <label className="labelCreate" htmlFor="">
                 E-mail
               </label>
@@ -82,18 +82,18 @@ function CreateAccount() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <div>
-                <label className="labelCreate" htmlFor="">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  className="inputPasswordCreate"
-                  id="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+
+              <label className="labelCreate" htmlFor="">
+                Password
+              </label>
+              <input
+                type="password"
+                className="inputPasswordCreate"
+                id="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+
               <div className="divButtonCreate">
                 <button className="buttonInscription" onClick={handleSubmit}>
                   Create Account
