@@ -431,46 +431,6 @@ label {
   font-size: 1.2rem;
 }
 
-.telEdit {
-  padding: 1em;
-  width: 30vw;
-  height: 1rem;
-  border: none;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #eff1f0a9;
-  border-radius: 4px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 0;
-  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
-  text-align: left;
-  color: #852d33;
-  box-sizing: content-box;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.2rem;
-}
-
-.bioEdit {
-  padding: 1em;
-  width: 30vw;
-  height: 5rem;
-  border: none;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #eff1f0a9;
-  border-radius: 4px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 0;
-  box-shadow: inset 0 0 1em #e6e6e600, 0 0 0.5em #33333258;
-  text-align: left;
-  color: #852d33;
-  box-sizing: content-box;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.2rem;
-}
-
 .btnValiderLogin {
   display: flex;
   justify-content: center;
