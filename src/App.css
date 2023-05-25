@@ -2,7 +2,6 @@ body {
   background: linear-gradient(to top, #6110026f, #f1efef);
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -15,6 +14,8 @@ body {
 
 .App {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   background: linear-gradient(to top, #6110026f, #f1efef);
@@ -107,12 +108,27 @@ body {
 }
 
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(to top, #6110026f, #f1efef);
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   width: 94%;
-  margin-bottom: 2rem;
+  padding-top: 0vh;
+}
+
+.container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, #6110026f, #f1efef);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 20vh;
 }
 
 .containerLogin {

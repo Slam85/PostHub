@@ -108,7 +108,7 @@ function Profile() {
             </div>
           </div>
         ) : isEditing === true ? (
-          <div className="container">
+          <div className="container2">
             <div className="backprofils">
               <div className="containerInfoEdit">
                 <div className="username">

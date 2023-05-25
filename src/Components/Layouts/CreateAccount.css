@@ -213,8 +213,7 @@ form {
 
 .container {
   align-items: center;
-  height: 100vh;
-  width: cover;
+  height: 70vh;
   border-radius: 4px;
   background-color: #e6e6e6;
   padding-left: 3vw;
