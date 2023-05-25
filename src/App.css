@@ -14,8 +14,6 @@ body {
 
 .App {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
   width: 100%;
   background: linear-gradient(to top, #6110026f, #f1efef);
@@ -495,5 +493,5 @@ label {
 }
 
 .containerHome {
-  margin-right: 83vh;
+  margin-right: 8vh;
 }
