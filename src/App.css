@@ -85,7 +85,6 @@ body {
   justify-content: right;
   font-size: 1rem;
   text-align: center;
-  position: relative;
   padding-bottom: 2rem;
   padding-right: 2rem;
   align-items: center;
@@ -101,7 +100,7 @@ body {
   padding-right: 1rem;
   font-size: 1rem;
   text-justify: inter-word;
-  position: relative;
+
 }
 
 .buttonLike:hover {
@@ -194,9 +193,10 @@ body {
   color: #611002 !important;
   margin: 1rem;
   box-sizing: content-box;
-  height: 3vh;
+  height: 8%;
   text-justify: center;
   font-size: 1rem;
+  text-align: center;
 }
 
 .commentBtn:hover {
