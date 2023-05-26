@@ -42,7 +42,6 @@ function NavBar() {
       <nav className="navBar">
         <div className="navButtons">
           {/* ici le token et vérifié. Se dans localStorage il y a un token enregistré, alors on est connecté et les buttons Profille et Sign Out s'affichent*/}
-          ,
           {token ? (
             <div className="connect">
               <Link to="/home" className="btnHome">
