@@ -14,10 +14,10 @@ function NavBar() {
       localStorage.removeItem("token");
       localStorage.removeItem("email");
       localStorage.removeItem("password");
-      //si oui, il supprime le token, email et le mot de passe du localStorage
+      //si non, il supprime le token, email et le mot de passe du localStorage
       navigate("/");
     } else {
-      //si non, il affiche une message
+      //si oui, il affiche une message
       Swal.fire({
         title: "Great!! You continue with us!!",
         width: 600,
@@ -58,19 +58,19 @@ function NavBar() {
             ({
               /* sinon, l'utilisateur n'est pas connecté et alors les buttons create account et sign in s'affichent*/
             },
-            (
-              <div className="noConnect">
-                <Link to="/" className="btnHome">
-                  Home
-                </Link>
-                <Link to="/register" className="btnHome">
-                  Create account
-                </Link>
-                <Link to="/connection" className="btnHome">
-                  Sign In
-                </Link>
-              </div>
-            ))
+              (
+                <div className="noConnect">
+                  <Link to="/" className="btnHome">
+                    Home
+                  </Link>
+                  <Link to="/register" className="btnHome">
+                    Create account
+                  </Link>
+                  <Link to="/connection" className="btnHome">
+                    Sign In
+                  </Link>
+                </div>
+              ))
           )}
         </div>
       </nav>

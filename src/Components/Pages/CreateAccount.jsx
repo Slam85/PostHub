@@ -13,7 +13,7 @@ function CreateAccount() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // METHODE ASYNCHRONE POUR SOUMETTRE LES INFORMATIONS DE CREATION DE COMPTE 
+  // METHODE POUR SOUMETTRE LES INFORMATIONS DE CREATION DE COMPTE 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ function CreateAccount() {
       }),
     };
     console.log("option", options);
-    
+
     // METHODE DE FETCH SUR UNE FONCTION ASYNCHRONE AVEC L'API DU SOCIAL NETWORK POUR PERMETTRE LA NAVIGATION EN MODE CONNECTÉ.E
     await fetch(
       `https://social-network-api.osc-fr1.scalingo.io/post-hub/register`,

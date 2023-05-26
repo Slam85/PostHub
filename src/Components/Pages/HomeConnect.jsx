@@ -129,7 +129,7 @@ function HomeConnect() {
     getInfoProfil();
   }, []);
 
-  //function pour envoyer les posts vers l'API. Ici est véerifié si l'utilisateur est connecté ou pas, pour être possible de enrengistré le post dans l'API
+  //function pour envoyer les posts vers l'API. Ici est véerifié si l'utilisateur est connecté ou pas, pour être possible d' enregistré le post dans l'API
   async function postPosts(e) {
     e.preventDefault();
 
@@ -195,7 +195,7 @@ function HomeConnect() {
                   className="inputComment"
                   type="text"
                   name="comment"
-                  placeholder="Ajouter un commentaire"
+                  placeholder="Write a comment"
                 />
                 <button className="commentBtn" type="submit">
                   Comment

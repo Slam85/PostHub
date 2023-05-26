@@ -14,7 +14,7 @@ function Profile() {
 
   const [isEditing, setIsEditing] = useState(false);
 
-  // FONCTION ASYNCHRONE QUI PERMET DE RÉCUPÉRER DEPUIS LE LOCALSTORAGE LES INFORMATIONS DU PROFIL UTILIATEURS
+  // FONCTION ASYNCHRONE QUI PERMET DE RÉCUPÉRER DEPUIS LE LOCALSTORAGE LES INFORMATIONS DU PROFIL UTILISATEUR
   async function getInfoProfil() {
     const options = {
       method: "GET",
@@ -33,6 +33,7 @@ function Profile() {
     setFirstName(data.firstname);
     setLastName(data.lastname);
     setEmail(data.email);
+    // Astuce
     setAge(data.age);
     setOccupation(data.occupation);
 

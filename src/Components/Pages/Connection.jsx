@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
 function Connection() {
+  // stock donné email et pasword dans localstorage afin de pouvoir rester connecté d'une page a l'autre et d'avoir les autorisations necessaire pour naviguer
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
   const [password, setPassword] = useState(
     localStorage.getItem("password") || ""
@@ -40,11 +41,11 @@ function Connection() {
     const data = await response.json();
 
     console.log(data);
-    // enregistrement des donnees du navigateur
+    // enregistrement des donnees de l'utilisateur
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
     localStorage.setItem("token", data.token);
-    // si les données importe son correct alors message (sweet alert et connection) sinon swal error e
+    // si les données importe son correct alors message (sweet alert et connection) sinon swal error 
     if (data.success) {
       swal("Welcome!", "You are connected!", "success");
       navigate("/home");
@@ -79,7 +80,7 @@ function Connection() {
                 onChange={(e) => setPassword(e.target.value)}
                 className="inputPasswordLogin"
               ></input>
-              {/* button qui au click permet d'envoyer les donnnées pour permettre la connectino */}
+              {/* button qui au click permet d'envoyer les donnnées pour permettre la connection */}
               <div>
                 <button className="btnValiderLogin" onClick={handleSubmit}>
                   Log in

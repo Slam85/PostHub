@@ -41,6 +41,7 @@ function Home() {
   // FONCTION QUI PERMET D'AFFICHER LES POSTS - ON UTILISE DES PROPS AFIN DE RÉCUPÉRER LES ÉLÉMENTS QUI CONSTITUENT LE POST COMME LE TITRE, LE CONTENU, AINSI QUE LES LIKES AJOUTÉS
   const renderMyPosts = () => {
     if (allPosts.length >= 0) {
+      // utilisation de slice pour ne pas encombrer la page et récupérer 4 posts
       return allPosts.slice(0, 4).map((item, index) => {
         return (
           <div key={index}>
