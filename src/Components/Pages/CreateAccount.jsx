@@ -6,11 +6,14 @@ import "../Layouts/CreateAccount.css";
 import swal from "sweetalert";
 
 function CreateAccount() {
+
+  // ON UTILISE USESTATE AFIN DE POUVOIR ENREGISTRER LES INFORMATIONS DE CREATION DE COMPTE : PRÉNOM, NOM, EMAIL, ET MOT DE PASSE, AVEC DES STRINGS
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // METHODE ASYNCHRONE POUR SOUMETTRE LES INFORMATIONS DE CREATION DE COMPTE 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +31,8 @@ function CreateAccount() {
       }),
     };
     console.log("option", options);
-
+    
+    // METHODE DE FETCH SUR UNE FONCTION ASYNCHRONE AVEC L'API DU SOCIAL NETWORK POUR PERMETTRE LA NAVIGATION EN MODE CONNECTÉ.E
     await fetch(
       `https://social-network-api.osc-fr1.scalingo.io/post-hub/register`,
       options
@@ -43,6 +47,7 @@ function CreateAccount() {
       });
   };
 
+  // ON DEMANDE LES ÉLÉMENTS À AFFICHER SUR LA PAGE POUR QUE L'UTILISATEUR PUISSE ENTRER LES INFORMATIONS NÉCESSAIRES À LA CRÉATION DE SON COMPTE (INPUT ET TEXTE INFORMATIF)
   return (
     <div>
       <NavBar />
