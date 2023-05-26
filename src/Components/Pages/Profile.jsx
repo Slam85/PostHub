@@ -4,6 +4,7 @@ import NavBar from "../Nav/NavBar";
 import "../Layouts/Profile.css";
 import swal from "sweetalert";
 
+// ON UTILISE USESTATE AFIN DE POUVOIR EDITER ET ENTRER DES INFORMATIONS UTILISATEURS AVEC DES STRINGS
 function Profile() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -13,6 +14,7 @@ function Profile() {
 
   const [isEditing, setIsEditing] = useState(false);
 
+  // FONCTION ASYNCHRONE QUI PERMET DE RÉCUPÉRER DEPUIS LE LOCALSTORAGE LES INFORMATIONS DU PROFIL UTILIATEURS
   async function getInfoProfil() {
     const options = {
       method: "GET",
@@ -37,10 +39,12 @@ function Profile() {
     console.log(data);
   }
 
+  //ON RÉCUPÈRE LES INFOS DU PROFIL DANS UN TABLEAU VIDE 
   useEffect(() => {
     getInfoProfil();
   }, []);
 
+  // FONCTION ASYNCHRONE QUI PERMET DE STOCKER LES INFORMATIONS MODIFIÉES DANS LE PROFIL
   async function updateInfoProfil() {
     const options = {
       method: "PUT",
@@ -73,6 +77,7 @@ function Profile() {
     setIsEditing(!isEditing);
   }
 
+  // ON RÉCUPÈRE LES INFORMATIONS MODIFIÉES DU PROFIL DANS LE LOCALSTORAGE GRÂCE À USEEFFECT
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
@@ -86,6 +91,7 @@ function Profile() {
     }
   }, []);
 
+  // ON AFFICHE SUR LA PAGE LES ÉLÉMENTS NÉCESSAIRES À L'UTILISATEUR POUR AFFICHER SON PROFIL, LE BOUTON DE MODICITON DE SON PROFIL, ET LA PAGE D'ÉDITION DE SON PROFIL
   return (
     <div>
       <NavBar />
