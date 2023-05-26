@@ -4,9 +4,12 @@ import NavBar from "../Nav/NavBar";
 import "../Layouts/navStyle.css";
 import swal from "sweetalert";
 
+// LA PAGE D'ACCUEIL HORS CONNEXION, QUI N'AFFICHE QUE LE CONTENU DES POSTS ET LE NOMBRE DE LIKES, SANS LES COMMENTAIRES NI LA POSSIBILITÉ DE LIKER OU COMMENTER
 function Home() {
+  // ON CRÉÉ UN TABLEAU VIDE GRÂCE À USESTATE AFIN DE STOCKER LES POSTS DEDANS POUR POUVOIR LES AFFICHER SUR LA PAGE D'ACCUEIL
   const [allPosts, setAllPosts] = useState([]);
 
+  // FONCTION ASYNCHRONE AVEC L'API DU SOCIAL NETWORK QUI PERMET DE STOCKER LES POSTS DANS LE LOCAL STORAGE POUR LES RÉCUPÉRER AFIN DE LES AFFICHER SUR LA PAGE HOME
   async function like(postId) {
     console.log(postId);
     let options = {
@@ -35,6 +38,7 @@ function Home() {
       });
   }
 
+  // FONCTION QUI PERMET D'AFFICHER LES POSTS - ON UTILISE DES PROPS AFIN DE RÉCUPÉRER LES ÉLÉMENTS QUI CONSTITUENT LE POST COMME LE TITRE, LE CONTENU, AINSI QUE LES LIKES AJOUTÉS
   const renderMyPosts = () => {
     if (allPosts.length >= 0) {
       return allPosts.slice(0, 4).map((item, index) => {
@@ -56,6 +60,7 @@ function Home() {
     }
   };
 
+  // FONCTION QUI PERMET DE RÉCUPÉRER LES POSTS DEPUIS LE LOCAL STORAGE GRÂCE À L'API
   async function getAllPost() {
     const options = {
       method: "GET",
@@ -79,6 +84,7 @@ function Home() {
     getAllPost();
   }, []);
 
+  // ON AFFICHE ENFIN LES POSTS SUR LA PAGE D'ACCUEIL HORS CONNEXION GRÂCE À LA RENDERMYPOSTS
   return (
     <div className="App">
       <NavBar />
