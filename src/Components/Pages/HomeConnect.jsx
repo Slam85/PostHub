@@ -15,6 +15,7 @@ function HomeConnect() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
+  //ici, on sauvegarde dans l'API le like pour chaque post, en verifiant si l'utilisateur est connecté (sinon il ne pourra pas faire like sur un post)
   async function like(postId) {
     let options = {
       method: "POST",
@@ -41,11 +42,12 @@ function HomeConnect() {
       swal(data.message);
     }
   }
-
+  //useEffect pour mettre a jour les info de la page concernante les likes par post
   useEffect(() => {
     getAllPost();
   }, []);
 
+  // function pour être possible d'ajouter des commentaires aux post et de les sauvegarder dans l'API
   async function addComment(postId, commentText) {
     const options = {
       method: "POST",
@@ -72,6 +74,7 @@ function HomeConnect() {
     }
   }
 
+  // function pour pusher tous les post de l'API pour être possible de les afficher après sur le feed
   async function getAllPost() {
     const options = {
       method: "GET",
@@ -93,18 +96,21 @@ function HomeConnect() {
     }
   }
 
+  //useEffect pour mettre a jour les info de la page concernante les posts ajoutées dans l'API
   useEffect(() => {
     getAllPost();
   }, []);
 
+  //ici nous obtenons la valeur d'input où nous écrivons le commentaire
   function handleInputChange(e) {
     setInputValue(e.target.value);
   }
-
+  //ici nous obtenons la valeur d'input où nous écrivons le titre du commentaire
   function handleInputChange2(e) {
     setInputTitle(e.target.value);
   }
 
+  //function pour récuperer le profile de l'utilisateur à partir de l'API
   async function getInfoProfil() {
     const options = {
       method: "GET",
@@ -123,6 +129,7 @@ function HomeConnect() {
     getInfoProfil();
   }, []);
 
+  //function pour envoyer les posts vers l'API. Ici est véerifié si l'utilisateur est connecté ou pas, pour être possible de enrengistré le post dans l'API
   async function postPosts(e) {
     e.preventDefault();
 
@@ -150,7 +157,7 @@ function HomeConnect() {
       swal(data.message);
     }
   }
-
+  //mise en forme du render des Posts avec les commentaires et likes inclus
   const renderMyPosts = () => {
     return allPosts.map((item) => {
       return (
@@ -209,6 +216,7 @@ function HomeConnect() {
     });
   };
 
+  //mise en forme de l'affichage de la page pour poster
   return (
     <>
       <NavBar />
