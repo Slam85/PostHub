@@ -14,6 +14,8 @@ function Connection() {
   );
   const navigate = useNavigate();
 
+
+  // qui va permettre de recupérer les donnné et attente des donné du fecth et les envoyer
   async function handleSubmit() {
     const options = {
       method: "POST",
@@ -29,6 +31,7 @@ function Connection() {
     setEmail("");
     setPassword("");
 
+    // Colis/ Information de la réponse
     const response = await fetch(
       `https://social-network-api.osc-fr1.scalingo.io/post-hub/login`,
       options
@@ -37,11 +40,11 @@ function Connection() {
     const data = await response.json();
 
     console.log(data);
-
+    // enregistrement des donnees du navigateur
     localStorage.setItem("email", email);
     localStorage.setItem("password", password);
     localStorage.setItem("token", data.token);
-
+    // si les données importe son correct alors message (sweet alert et connection) sinon swal error e
     if (data.success) {
       swal("Welcome!", "You are connected!", "success");
       navigate("/home");
@@ -52,6 +55,7 @@ function Connection() {
 
   return (
     <div className="connection">
+      {/*appel du compoment  navBar */}
       <NavBar />
       <div className="containerMillieu">
         <div className="containerLogin">
@@ -59,6 +63,7 @@ function Connection() {
             <label htmlFor="" className="textLogin">
               E-mail
             </label>
+            {/* recupération valeur qui envoie dans tableau useState */}
             <input
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -74,6 +79,7 @@ function Connection() {
                 onChange={(e) => setPassword(e.target.value)}
                 className="inputPasswordLogin"
               ></input>
+              {/* button qui au click permet d'envoyer les donnnées pour permettre la connectino */}
               <div>
                 <button className="btnValiderLogin" onClick={handleSubmit}>
                   Log in
