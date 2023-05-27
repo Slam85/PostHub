@@ -7,8 +7,6 @@ import "../Layouts/Error.css";
 function Error() {
   return (
     <div>
-
-      // RAPPEL DE LA BARRE DE NAVIGATION
       <NavBar />
       <div className="home">
         <section class="page_404">
@@ -21,12 +19,10 @@ function Error() {
                   </div>
 
                   <div class="contant_box_404">
-
                     <h3 class="h2">Looks like you're lost</h3>
 
                     <p>The page you are looking for is not avaible!</p>
 
-                    // LIEN DE REDIRECTION VERS LA PAGE D'ACCUEIL
                     <a href="./Home" class="link_404">
                       Go to Home
                     </a>
